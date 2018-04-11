@@ -28,4 +28,11 @@ public class Empresa {
 		}
 		return 2;
 	}
+	public boolean quitarUsuario(Usuario n) { //Si removio el usuario, retorna true, si no lo hace, retorna false
+		if(Usuarios.contains(n)) {
+			Usuarios.remove(n);
+			return true;
+		}
+		return false;
+	}
 }
