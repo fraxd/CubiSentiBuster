@@ -12,6 +12,8 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
 
@@ -50,13 +52,20 @@ public class Login extends JFrame {
 		contentPane.add(passwordField);
 		
 		JButton btnLogin = new JButton("Ingresar");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VMenuPrincipal vmenuprincipal = new VMenuPrincipal();
+				setVisible(false);
+				vmenuprincipal.setVisible(	true);
+			}
+		});
 		btnLogin.setFont(new Font("Roboto", Font.BOLD, 20));
 		btnLogin.setBounds(144, 227, 132, 23);
 		contentPane.add(btnLogin);
 		
-		JLabel lblNewLabel_1 = new JLabel("CubiSentiBuster");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 40));
-		lblNewLabel_1.setBounds(46, 11, 334, 78);
-		contentPane.add(lblNewLabel_1);
+		JLabel tituloLogin = new JLabel("CubiSentiBuster");
+		tituloLogin.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 40));
+		tituloLogin.setBounds(46, 11, 334, 78);
+		contentPane.add(tituloLogin);
 	}
 }
