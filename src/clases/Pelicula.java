@@ -1,4 +1,4 @@
-package classes;
+package clases;
 
 public class Pelicula {
 
