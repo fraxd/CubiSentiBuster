@@ -1,13 +1,14 @@
 package clases;
 
-public class Pelicula {
+public class Serie {
 	private String name;
 	private String[] generos;
 	private int year;
 	private String duracion;
+	private int capitulos;
 	private double rate;
 	
-	public Pelicula(){
+	public Serie(){
 		name=null;
 		generos= new String[3];
 		year=0;
@@ -26,6 +27,9 @@ public class Pelicula {
 	public String getDuracion(){
 		return duracion;
 	}
+	public int getCapitulos(){
+		return capitulos;
+	}
 	public double getRate(){
 		return rate;
 	}
@@ -42,14 +46,18 @@ public class Pelicula {
 	public void setDuracion(String duracion){
 		this.duracion=duracion;
 	}
+	public void setCapitulos(int capitulos){
+		this.capitulos=capitulos;
+	}
 	public void setRate(double rate){
 		this.rate=rate;
 	}
-	public Pelicula(String name, String[] generos, int year, String duracion, double rate){
+	public Serie(String name, String[] generos, int year, String duracion,int capitulos, double rate){
 		setName(name);
 		setGeneros(generos);
 		setYear(year);
 		setDuracion(duracion);
+		setCapitulos(capitulos);
 		setRate(rate);
 	}
 }
