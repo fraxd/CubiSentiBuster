@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clases.Usuario;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
@@ -54,7 +57,12 @@ public class Login extends JFrame {
 		JButton btnLogin = new JButton("Ingresar");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Usuario aux;
 				VMenuPrincipal vmenuprincipal = new VMenuPrincipal();
+				/*if() {
+					
+				}
+				*/
 				setVisible(false);
 				vmenuprincipal.setVisible(	true);
 			}
