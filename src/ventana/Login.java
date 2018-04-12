@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import clases.Usuario;
+import javafx.scene.control.PasswordField;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -58,12 +59,18 @@ public class Login extends JFrame {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Usuario aux;
+				String user = userField.getText();
+				//String pass = String.valueOf(JPasswordField.getPassword());
+				char[] passAux = PasswordField.getPassword();
+				String p = String.valueOf(passAux);
+
 				VMenuPrincipal vmenuprincipal = new VMenuPrincipal();
+				
 				/*if() {
 					
 				}
-				*/
-				setVisible(false);
+				
+				setVisible(false); */
 				vmenuprincipal.setVisible(	true);
 			}
 		});
