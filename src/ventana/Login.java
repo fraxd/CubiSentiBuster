@@ -69,7 +69,15 @@ public class Login extends JFrame {
 				String p = String.valueOf(passAux);
 				
 				aux=Empresa.verificarUsuario(userAux,p);
-				
+				if(aux!=null) {
+					VMenuPrincipal vmenuprincipal = new VMenuPrincipal();
+					setVisible(false);
+					vmenuprincipal.setVisible(	true);
+				}
+				else {
+						LoginError LError = new LoginError();
+						LError.setVisible(true);
+				}
 				
 			}
 		});

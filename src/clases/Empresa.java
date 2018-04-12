@@ -16,17 +16,16 @@ public class Empresa {
 		Usuarios.add(n);
 		return true;
 	}
-	public int verificarUsuario(int id, String password) { //1 es usuario correcto, 2 el usuario no existe, y 3 contraseña incorrecta
+	public  Usuario verificarUsuario(int id, String password) { // Busca y retorna usuario (Verifica el pass para retornar el usuario)
 		int i;
 		for(i=0;i<(Usuarios.size());i++) {
 			if(id==Usuarios.get(i).getId()) {
 				if(password==Usuarios.get(i).getPass()) {
-					return 1;
+					return Usuarios.get(i);
 				}
-				return 3;
 			}
 		}
-		return 2;
+		return null;
 	}
 	public boolean quitarUsuario(Usuario n) { //Si removio el usuario, retorna true, si no lo hace, retorna false
 		if(Usuarios.contains(n)) {
