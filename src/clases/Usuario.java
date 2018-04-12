@@ -15,11 +15,19 @@ public class Usuario {
 		local=0;
 	}
 		
+	public Usuario(int idUser, String pass, String nombre, int level, int local) {
+		this.idUser = idUser;
+		this.pass = pass;
+		this.nombre = nombre;
+		this.level = level;
+		this.local = local;
+	}
+
 	public int getId(){
 		return idUser;
 	}
 	public String getPass(){
-		return pass;
+		return this.pass;
 	}
 	public String getName() {
 		return nombre;

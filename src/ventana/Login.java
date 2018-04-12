@@ -59,17 +59,17 @@ public class Login extends JFrame {
 		JButton btnLogin = new JButton("Ingresar");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Usuario aux;
+				boolean aux;
+				Empresa nuevaEmpresa = new Empresa();
 				int userAux;
 				String message;
-				String user = userField.getText();
+				String user = userField.getText().toString();
 				userAux=Integer.parseInt(user);
 				//String pass = String.valueOf(JPasswordField.getPassword());
 				char[] passAux = passwordField.getPassword();
-				String p = String.valueOf(passAux);
-				aux=null;
-				//aux=(Usuario)Empresa.verificarUsuario(userAux,p);
-				if(aux==null) { //// IF MODIFICADO TEMPORALMENTE PARA HACER PRUEBAS, DEBE SER AUX !=NULL 
+				String password = String.valueOf(passAux);
+				aux = nuevaEmpresa.verificarUsuario(userAux,password);
+				if(aux) {
 					VMenuPrincipal vmenuprincipal = new VMenuPrincipal();
 					setVisible(false);
 					vmenuprincipal.setVisible(	true);

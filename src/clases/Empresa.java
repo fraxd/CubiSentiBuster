@@ -3,33 +3,38 @@ package clases;
 import java.util.ArrayList;
 
 public class Empresa {
-	private ArrayList<Usuario> Usuarios;
+	private ArrayList<Usuario> usuarios;
 	
 	public Empresa() {
-		Usuarios= new ArrayList<Usuario>();
+		usuarios= new ArrayList<Usuario>();
+		Usuario hola = new Usuario(123, "hola", "mauricio", 2,0);
 	}
+	
 	public boolean agregarUsuario(Usuario n) { //retorna false si el id ya existe, sino, agrega el usuario y retorna true;
 		int i;
-		for(i=0;i<(Usuarios.size());i++) {
-			if(Usuarios.get(i).getId()==n.getId())return false;
+		for(i=0;i<(usuarios.size());i++) {
+			if(usuarios.get(i).getId()==n.getId())return false;
 		}
-		Usuarios.add(n);
+		usuarios.add(n);
 		return true;
 	}
-	public   Usuario verificarUsuario(int id, String password) { // Busca y retorna usuario (Verifica el pass para retornar el usuario)
+	
+	public boolean verificarUsuario(int id, String password) { // Busca y retorna usuario (Verifica el pass para retornar el usuario)
 		int i;
-		for(i=0;i<(Usuarios.size());i++) {
-			if(id==Usuarios.get(i).getId()) {
-				if(password==Usuarios.get(i).getPass()) {
-					return Usuarios.get(i);
+		
+		for(i=0;i<(usuarios.size());i++) {
+			if(id==usuarios.get(i).getId()) {
+				if(password==usuarios.get(i).getPass()) {
+					return true;
 				}
 			}
 		}
-		return null;
+		return false;
 	}
+	
 	public boolean quitarUsuario(Usuario n) { //Si removio el usuario, retorna true, si no lo hace, retorna false
-		if(Usuarios.contains(n)) {
-			Usuarios.remove(n);
+		if(usuarios.contains(n)) {
+			usuarios.remove(n);
 			return true;
 		}
 		return false;

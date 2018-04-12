@@ -20,7 +20,7 @@ public class VMenuPrincipal extends JFrame {
 	
 	public VMenuPrincipal() {
 		String name ="tio emilio";
-		Usuario aux=generarUsuario(133, "jaja", name, 1, 555);  /// PARA PRUEBAS, USUARIO DEBERIA VENIR DESDE EL LOGIN
+		Usuario aux= new Usuario(133, "jaja", name, 1, 555);  /// PARA PRUEBAS, USUARIO DEBERIA VENIR DESDE EL LOGIN
 
 		//aux=generarUsuario(133, "jaja", name, 1, 555);
 		
