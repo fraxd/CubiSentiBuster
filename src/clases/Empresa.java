@@ -16,7 +16,7 @@ public class Empresa {
 		Usuarios.add(n);
 		return true;
 	}
-	public  Usuario verificarUsuario(int id, String password) { // Busca y retorna usuario (Verifica el pass para retornar el usuario)
+	public   Usuario verificarUsuario(int id, String password) { // Busca y retorna usuario (Verifica el pass para retornar el usuario)
 		int i;
 		for(i=0;i<(Usuarios.size());i++) {
 			if(id==Usuarios.get(i).getId()) {

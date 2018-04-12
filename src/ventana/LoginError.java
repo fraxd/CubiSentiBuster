@@ -14,6 +14,8 @@ import java.awt.Window.Type;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class LoginError extends JDialog {
 
@@ -40,7 +42,12 @@ public class LoginError extends JDialog {
 			
 			{
 			
-				JButton okButton = new JButton("OK");
+				JButton okButton = new JButton("Oki Doki");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+					}
+				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);

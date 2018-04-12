@@ -67,9 +67,9 @@ public class Login extends JFrame {
 				//String pass = String.valueOf(JPasswordField.getPassword());
 				char[] passAux = passwordField.getPassword();
 				String p = String.valueOf(passAux);
-				
-				aux=Empresa.verificarUsuario(userAux,p);
-				if(aux!=null) {
+				aux=null;
+				//aux=(Usuario)Empresa.verificarUsuario(userAux,p);
+				if(aux==null) { //// IF MODIFICADO TEMPORALMENTE PARA HACER PRUEBAS, DEBE SER AUX !=NULL 
 					VMenuPrincipal vmenuprincipal = new VMenuPrincipal();
 					setVisible(false);
 					vmenuprincipal.setVisible(	true);
