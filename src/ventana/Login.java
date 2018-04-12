@@ -62,7 +62,6 @@ public class Login extends JFrame {
 				boolean aux;
 				Empresa nuevaEmpresa = new Empresa();
 				int userAux;
-				String message;
 				String user = userField.getText().toString();
 				userAux=Integer.parseInt(user);
 				//String pass = String.valueOf(JPasswordField.getPassword());
@@ -70,6 +69,9 @@ public class Login extends JFrame {
 				String password = String.valueOf(passAux);
 				aux = nuevaEmpresa.verificarUsuario(userAux,password);
 				if(aux) {
+				//	if(obtenerLevelUsuario(userAux)==1) {/// Level = 1 es nivel Administrador
+						
+					//}
 					VMenuPrincipal vmenuprincipal = new VMenuPrincipal();
 					setVisible(false);
 					vmenuprincipal.setVisible(	true);

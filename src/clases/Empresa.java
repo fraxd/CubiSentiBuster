@@ -8,6 +8,7 @@ public class Empresa {
 	public Empresa() {
 		usuarios= new ArrayList<Usuario>();
 		Usuario hola = new Usuario(123, "hola", "mauricio", 2,0);
+		agregarUsuario(hola);
 	}
 	
 	public boolean agregarUsuario(Usuario n) { //retorna false si el id ya existe, sino, agrega el usuario y retorna true;
@@ -24,7 +25,7 @@ public class Empresa {
 		
 		for(i=0;i<(usuarios.size());i++) {
 			if(id==usuarios.get(i).getId()) {
-				if(password==usuarios.get(i).getPass()) {
+				if(password.equals(usuarios.get(i).getPass())) {
 					return true;
 				}
 			}
@@ -38,5 +39,11 @@ public class Empresa {
 			return true;
 		}
 		return false;
+	}
+
+	public int obtenerLevelUsuario(String id) {
+		
+		
+		return 3;
 	}
 }

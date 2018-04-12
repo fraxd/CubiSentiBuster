@@ -19,6 +19,7 @@ public class VMenuPrincipal extends JFrame {
 
 	
 	public VMenuPrincipal() {
+		setTitle("Menu Principal");
 		String name ="tio emilio";
 		Usuario aux= new Usuario(133, "jaja", name, 1, 555);  /// PARA PRUEBAS, USUARIO DEBERIA VENIR DESDE EL LOGIN
 
@@ -27,7 +28,7 @@ public class VMenuPrincipal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 648, 443);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(76, 175, 80));
+		contentPane.setBackground(new Color(156, 204, 101));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
