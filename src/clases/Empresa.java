@@ -44,9 +44,13 @@ public class Empresa {
 	}
 
 	public int obtenerLevelUsuario(int userAux) {
-		
-		
-		return 1;
+		int i;
+		for(i=0;i<(usuarios.size());i++) {
+			if(userAux==usuarios.get(i).getId()) {
+					return usuarios.get(i).getLevel();
+			}
+		}
+		return -1; ////En caso de retornar -1, no encontro al usuario
 	}
 
 	public boolean agregarTienda(Tienda tienda) {
