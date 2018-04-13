@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import clases.Empresa;
+import clases.Tienda;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -56,7 +57,18 @@ public class NuevaTienda extends JDialog {
 				JButton okButton = new JButton("Aceptar");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						int idTienda = Integer.parseInt(textField.getText());
+						Tienda tienda = new Tienda();
+						tienda.setIdTienda(idTienda);
+						if(cubiSentiBuster.agregarTienda(tienda)) {
+							NuevaTiendaOk nuevaTiendaOk = new NuevaTiendaOk();
+							nuevaTiendaOk.setVisible(true);
+							dispose();
+						}
+						else {
+							NuevaTiendaError error = new NuevaTiendaError();
+							error.setVisible(true);
+						}
 						
 					}
 				});
@@ -66,6 +78,11 @@ public class NuevaTienda extends JDialog {
 			}
 			{
 				JButton cancelButton = new JButton("Cancelar");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+					}
+				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}

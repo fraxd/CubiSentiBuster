@@ -20,10 +20,6 @@ public class VMenuPrincipal extends JFrame {
 	
 	public VMenuPrincipal() {
 		setTitle("Menu Principal");
-		String name ="tio emilio";
-		Usuario aux= new Usuario(133, "jaja", name, 1, 555);  /// PARA PRUEBAS, USUARIO DEBERIA VENIR DESDE EL LOGIN
-
-		//aux=generarUsuario(133, "jaja", name, 1, 555);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 648, 443);
@@ -38,7 +34,7 @@ public class VMenuPrincipal extends JFrame {
 		lblBienvenido.setBounds(10, 11, 93, 14);
 		contentPane.add(lblBienvenido);
 		
-		JLabel lblNombreUser = new JLabel(aux.getName());
+		JLabel lblNombreUser = new JLabel("");
 		lblNombreUser.setFont(new Font("Roboto", Font.ITALIC, 18));
 		lblNombreUser.setBounds(121, 11, 125, 14);
 		contentPane.add(lblNombreUser);
