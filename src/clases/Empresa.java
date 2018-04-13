@@ -57,4 +57,15 @@ public class Empresa {
 		tiendas.add(tienda);
 		return true;
 	}
+	
+	public boolean quitarTienda(int idTienda) {
+		int i;
+		for(i=0;i<tiendas.size();i++) {
+			if(tiendas.get(i).getIdTienda()==idTienda) {
+				tiendas.remove(i);
+				return true;
+			}
+		}
+		return false;
+	}
 }
