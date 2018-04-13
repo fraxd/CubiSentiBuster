@@ -13,31 +13,42 @@ public class Producto {
 		series= new ArrayList<Serie>();
 	}
 	
-	public boolean agregarPelicula(Pelicula n) { //agrega una Pelicula, retorna false si ya esta, true si la agrega con exito
+	public Producto(ArrayList<Pelicula> peliculas, ArrayList<Juego> juegos, ArrayList<Serie> series) {
+		super();
+		this.peliculas = peliculas;
+		this.juegos = juegos;
+		this.series = series;
+	}
+
+	//Zona de Agregados
+	public boolean agregarPelicula(Pelicula pelicula) { //agrega una Pelicula, retorna false si ya esta, true si la agrega con exito
 		int i;
 		for(i=0;i<peliculas.size();i++) {
-			if(n.getName()==peliculas.get(i).getName())return false;
+			if(pelicula.getName()==peliculas.get(i).getName())return false;
 		}
-		peliculas.add(n);
+		peliculas.add(pelicula);
 		return true;
 	}
-	public boolean agregarJuego(Juego n) { //agrega un Juego, retorna false si ya esta, true si la agrega con exito
+
+	public boolean agregarJuego(Juego juego) { //agrega un Juego, retorna false si ya esta, true si la agrega con exito
 		int i;
 		for(i=0;i<juegos.size();i++) {
-			if(n.getName()==juegos.get(i).getName())return false;
+			if(juego.getName()==juegos.get(i).getName())return false;
 		}
-		juegos.add(n);
+		juegos.add(juego);
 		return true;
 	}
-	public boolean agregarSerie(Serie n) { //agrega una Serie, retorna false si ya esta, true si la agrega con exito
+
+	public boolean agregarSerie(Serie serie) { //agrega una Serie, retorna false si ya esta, true si la agrega con exito
 		int i;
 		for(i=0;i<series.size();i++) {
-			if(n.getName()==series.get(i).getName())return false;
+			if(serie.getName()==series.get(i).getName())return false;
 		}
-		series.add(n);
+		series.add(serie);
 		return true;
 	}
 	
+//Zona de Obtencion
 	public Pelicula obtenerPelicula(String name) { //retorna la Pelicula si la encuentra, null si no
 		int i;
 		for(i=0;i<peliculas.size();i++) {
@@ -60,6 +71,7 @@ public class Producto {
 		return null;
 	}
 
+//Zona de Quitar
 	public boolean quitarPelicula(String name) { //remueve una Pelicula por su nombre y retorna true, si no esta, retorna false
 		int i;
 		for(i=0;i<peliculas.size();i++) {

@@ -7,6 +7,8 @@ public class Serie {
 	private String duracion;
 	private int capitulos;
 	private double rate;
+		private int stock;
+	private int totalstock;
 	
 	public Serie(){
 		name=null;
@@ -33,6 +35,12 @@ public class Serie {
 	public double getRate(){
 		return rate;
 	}
+	public int getStock() {
+		return stock;
+	}
+	public int getTotalstock() {
+		return totalstock;
+	}
 	
 	public void setName(String name){
 		this.name=name;	
@@ -52,6 +60,13 @@ public class Serie {
 	public void setRate(double rate){
 		this.rate=rate;
 	}
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+	public void setTotalstock(int totalstock) {
+		this.totalstock = totalstock;
+	}
+
 	public Serie(String name, String[] generos, int year, String duracion,int capitulos, double rate){
 		setName(name);
 		setGeneros(generos);

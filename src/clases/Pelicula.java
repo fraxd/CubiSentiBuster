@@ -6,6 +6,8 @@ public class Pelicula {
 	private int year;
 	private String duracion;
 	private double rate;
+	private int stock;
+	private int totalstock;
 	
 	public Pelicula(){
 		name=null;
@@ -13,7 +15,10 @@ public class Pelicula {
 		year=0;
 		duracion=null;
 		rate=0;
+		stock=0;
+		totalstock=0;
 	}
+
 	public String getName(){
 		return name;
 	}
@@ -28,6 +33,12 @@ public class Pelicula {
 	}
 	public double getRate(){
 		return rate;
+	}
+	public int getStock() {
+		return stock;
+	}
+	public int getTotalstock() {
+		return totalstock;
 	}
 	
 	public void setName(String name){
@@ -45,6 +56,13 @@ public class Pelicula {
 	public void setRate(double rate){
 		this.rate=rate;
 	}
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+	public void setTotalstock(int totalstock) {
+		this.totalstock = totalstock;
+	}
+	
 	public Pelicula(String name, String[] generos, int year, String duracion, double rate){
 		setName(name);
 		setGeneros(generos);
