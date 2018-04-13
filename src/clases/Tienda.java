@@ -11,11 +11,13 @@ public class Tienda {
 	public Tienda() {
 		this.idTienda = 0;
 		trabajadores= new ArrayList<Usuario>();
+		this.productos= new Producto();
 	}
 	
-	public Tienda(int idTienda, ArrayList<Usuario> trabajadores) {
+	public Tienda(int idTienda, ArrayList<Usuario> trabajadores, Producto productos) {
 		this.idTienda = idTienda;
 		this.trabajadores = trabajadores;
+		this.productos = productos;
 	}
 
 	public int getIdTienda() {

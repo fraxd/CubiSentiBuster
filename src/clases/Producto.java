@@ -29,7 +29,17 @@ public class Producto {
 		peliculas.add(pelicula);
 		return true;
 	}
-
+	////Agregado encapsulado - El que debemos usar supuestamente(?)
+/*	public boolean agregarPelicula(String name, String[] generos, int year, String duracion, double rate, int stock, int totalstock){
+		int i;
+		Pelicula pelicula= new pelicula(String name, String[] generos, int year, String duracion, double rate, int stock, int totalstock);
+		for(i=0;i<peliculas.size();i++) {
+			if(pelicula.getName()==peliculas.get(i).getName())return false;
+		}
+		peliculas.add(pelicula);
+		return true;
+	}*/
+	////
 	public boolean agregarJuego(Juego juego) { //agrega un Juego, retorna false si ya esta, true si la agrega con exito
 		int i;
 		for(i=0;i<juegos.size();i++) {
@@ -56,6 +66,59 @@ public class Producto {
 		}
 		return null;
 	}
+	////Encapsulado Pelicula
+	public String obtenerPeliculaName(String name){
+		int i;
+		for(i=0;i<peliculas.size();i++) {
+			if(peliculas.get(i).getName()==name)return peliculas.get(i).getName();
+		}
+		return null;
+	}
+	public String[] obtenerPeliculaGeneros(String name){
+		int i;
+		for(i=0;i<peliculas.size();i++) {
+			if(peliculas.get(i).getName()==name)return peliculas.get(i).getGeneros();
+		}
+		return null;
+	}
+	public int obtenerPeliculaYear(String name){
+		int i;
+		for(i=0;i<peliculas.size();i++) {
+			if(peliculas.get(i).getName()==name)return peliculas.get(i).getYear();
+		}
+		return 0;
+	}
+	public String obtenerPeliculaDuracion(String name){
+		int i;
+		for(i=0;i<peliculas.size();i++) {
+			if(peliculas.get(i).getName()==name)return peliculas.get(i).getDuracion();
+		}
+		return null;
+	}
+	public double obtenerPeliculaRate(String name){
+		int i;
+		for(i=0;i<peliculas.size();i++) {
+			if(peliculas.get(i).getName()==name)return peliculas.get(i).getRate();
+		}
+		return 0;
+	}
+	public int obtenerPeliculaStock(String name){
+		int i;
+		for(i=0;i<peliculas.size();i++) {
+			if(peliculas.get(i).getName()==name)return peliculas.get(i).getStock();
+		}
+		return 0;
+	}
+	public int obtenerPeliculaTotalstock(String name){
+		int i;
+		for(i=0;i<peliculas.size();i++) {
+			if(peliculas.get(i).getName()==name)return peliculas.get(i).getTotalstock();
+		}
+		return 0;
+	}
+
+	////
+	
 	public Juego obtenerJuego(String name) { //retorna el juego si lo encuentra, null si no
 		int i;
 		for(i=0;i<juegos.size();i++) {

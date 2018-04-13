@@ -19,6 +19,17 @@ public class Pelicula {
 		totalstock=0;
 	}
 
+	public Pelicula(String name, String[] generos, int year, String duracion, double rate, int stock, int totalstock) {
+		super();
+		this.name = name;
+		this.generos = generos;
+		this.year = year;
+		this.duracion = duracion;
+		this.rate = rate;
+		this.stock = stock;
+		this.totalstock = totalstock;
+	}
+
 	public String getName(){
 		return name;
 	}
@@ -63,11 +74,4 @@ public class Pelicula {
 		this.totalstock = totalstock;
 	}
 	
-	public Pelicula(String name, String[] generos, int year, String duracion, double rate){
-		setName(name);
-		setGeneros(generos);
-		setYear(year);
-		setDuracion(duracion);
-		setRate(rate);
-	}
 }
