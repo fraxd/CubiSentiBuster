@@ -43,6 +43,11 @@ public class ControlTienda extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Eliminar Tienda");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnNewButton_1.setFont(new Font("Roboto", Font.PLAIN, 16));
 		btnNewButton_1.setBounds(27, 107, 200, 23);
 		contentPane.add(btnNewButton_1);

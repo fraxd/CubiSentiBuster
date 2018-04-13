@@ -14,6 +14,10 @@ public class Tienda {
 		this.productos= new Producto();
 	}
 	
+	public Tienda(int idTienda) {
+		this.idTienda =idTienda;
+	}
+	
 	public Tienda(int idTienda, ArrayList<Usuario> trabajadores, Producto productos) {
 		this.idTienda = idTienda;
 		this.trabajadores = trabajadores;
