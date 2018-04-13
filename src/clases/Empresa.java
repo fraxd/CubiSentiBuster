@@ -41,9 +41,9 @@ public class Empresa {
 		return false;
 	}
 
-	public int obtenerLevelUsuario(String id) {
+	public int obtenerLevelUsuario(int userAux) {
 		
 		
-		return 3;
+		return 1;
 	}
 }

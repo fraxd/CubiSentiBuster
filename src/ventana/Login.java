@@ -27,6 +27,7 @@ public class Login extends JFrame {
 	private JPasswordField passwordField;
 
 	public Login() {
+		setTitle("CubiSentiBuster Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -57,6 +58,8 @@ public class Login extends JFrame {
 		contentPane.add(passwordField);
 		
 		JButton btnLogin = new JButton("Ingresar");
+		btnLogin.setForeground(Color.BLACK);
+		btnLogin.setBackground(Color.WHITE);
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				boolean aux;
@@ -69,12 +72,17 @@ public class Login extends JFrame {
 				String password = String.valueOf(passAux);
 				aux = nuevaEmpresa.verificarUsuario(userAux,password);
 				if(aux) {
-				//	if(obtenerLevelUsuario(userAux)==1) {/// Level = 1 es nivel Administrador
-						
-					//}
-					VMenuPrincipal vmenuprincipal = new VMenuPrincipal();
-					setVisible(false);
-					vmenuprincipal.setVisible(	true);
+					if(nuevaEmpresa.obtenerLevelUsuario(userAux)==1) {/// Level = 1 es nivel Administrador
+						MenuAdmin menuadmin = new MenuAdmin();
+						menuadmin.setVisible(true);
+						dispose();
+					}
+
+					else {
+						VMenuPrincipal vmenuprincipal = new VMenuPrincipal();
+						setVisible(false);
+						vmenuprincipal.setVisible(true);
+					}
 				}
 				else {
 						LoginError LError = new LoginError();
