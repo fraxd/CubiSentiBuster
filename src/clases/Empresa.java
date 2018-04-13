@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Empresa {
 	private ArrayList<Usuario> usuarios;
+	private ArrayList<Tienda> tiendas;
 	
 	public Empresa() {
 		usuarios= new ArrayList<Usuario>();
@@ -45,5 +46,14 @@ public class Empresa {
 		
 		
 		return 1;
+	}
+
+	public boolean agregarTienda(Tienda tienda) {
+		int i;
+		for(i=0;i<tiendas.size();i++) {
+			if(tiendas.get(i).getIdTienda()==tienda.getIdTienda())return false;
+		}
+		tiendas.add(tienda);
+		return true;
 	}
 }
