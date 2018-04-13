@@ -26,7 +26,7 @@ public class Login extends JFrame {
 	private JTextField userField;
 	private JPasswordField passwordField;
 
-	public Login() {
+	public Login(Empresa cubiSentiBuster) {
 		setTitle("CubiSentiBuster Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -63,17 +63,16 @@ public class Login extends JFrame {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				boolean aux;
-				Empresa nuevaEmpresa = new Empresa();
 				int userAux;
 				String user = userField.getText().toString();
 				userAux=Integer.parseInt(user);
 				//String pass = String.valueOf(JPasswordField.getPassword());
 				char[] passAux = passwordField.getPassword();
 				String password = String.valueOf(passAux);
-				aux = nuevaEmpresa.verificarUsuario(userAux,password);
+				aux = cubiSentiBuster.verificarUsuario(userAux,password);
 				if(aux) {
-					if(nuevaEmpresa.obtenerLevelUsuario(userAux)==1) {/// Level = 1 es nivel Administrador
-						MenuAdmin menuadmin = new MenuAdmin();
+					if(cubiSentiBuster.obtenerLevelUsuario(userAux)==1) {/// Level = 1 es nivel Administrador
+						MenuAdmin menuadmin = new MenuAdmin(cubiSentiBuster);
 						menuadmin.setVisible(true);
 						dispose();
 					}

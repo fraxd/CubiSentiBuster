@@ -14,7 +14,9 @@ public class Inicio {
 		{
 		   e.printStackTrace();
 		}
-		Login login = new Login();
+		Empresa cubiSentiBuster = new Empresa();
+		
+		Login login = new Login(cubiSentiBuster);
 		login.setVisible(true);
 		
 

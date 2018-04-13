@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clases.Empresa;
+
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -19,7 +22,7 @@ public class MenuAdmin extends JFrame {
 	private JPanel contentPane;
 
 	
-	public MenuAdmin() {
+	public MenuAdmin(Empresa cubiSentiBuster) {
 		setTitle("Menu Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 337, 211);
@@ -33,7 +36,8 @@ public class MenuAdmin extends JFrame {
 		btnCerrarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				
+				Login login = new Login(cubiSentiBuster);
+				login.setVisible(true);
 			}
 		});
 		btnCerrarSesion.setFont(new Font("Roboto", Font.PLAIN, 12));
@@ -41,6 +45,16 @@ public class MenuAdmin extends JFrame {
 		contentPane.add(btnCerrarSesion);
 		
 		JButton btnControlTienda = new JButton("Control Tienda");
+		btnControlTienda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/*ElegirLocal elegirlocal = new ElegirLocal();
+				elegirlocal.setVisible(true);
+				*/
+				ControlTienda controltienda = new ControlTienda(cubiSentiBuster);
+				controltienda.setVisible(true);
+				
+			}
+		});
 		btnControlTienda.setFont(new Font("Roboto", Font.PLAIN, 14));
 		btnControlTienda.setBounds(10, 54, 160, 23);
 		contentPane.add(btnControlTienda);
