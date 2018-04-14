@@ -6,9 +6,10 @@ public class Juego {
 	private int year;
 	private String plataforma;
 	private double rate;
-		private int stock;
+	private int stock;
 	private int totalstock;
 
+	//// Constructores
 	public Juego(){
 		name=null;
 		generos= new String[3];
@@ -16,6 +17,17 @@ public class Juego {
 		plataforma=null;
 		rate=0;
 	}
+	public Juego(String name, String[] generos, int year, String plataforma, double rate, int stock, int totalstock) {
+		this.name = name;
+		this.generos = generos;
+		this.year = year;
+		this.plataforma = plataforma;
+		this.rate = rate;
+		this.stock = stock;
+		this.totalstock = totalstock;
+	}
+	//// Fin Constructores
+	
 	public String getName(){
 		return name;
 	}

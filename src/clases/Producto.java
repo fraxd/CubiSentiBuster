@@ -126,6 +126,59 @@ public class Producto {
 		}
 		return null;
 	}
+
+	////Encapsulado obtenerJuego
+		public String obtenerJuegoName(String name){
+		int i;
+		for(i=0;i<juegos.size();i++) {
+			if(juegos.get(i).getName()==name)return juegos.get(i).getName();
+		}
+		return null;
+	}
+	public String[] obtenerJuegoGeneros(String name){
+		int i;
+		for(i=0;i<juegos.size();i++) {
+			if(juegos.get(i).getName()==name)return juegos.get(i).getGeneros();
+		}
+		return null;
+	}
+	public int obtenerJuegoYear(String name){
+		int i;
+		for(i=0;i<juegos.size();i++) {
+			if(juegos.get(i).getName()==name)return juegos.get(i).getYear();
+		}
+		return 0;
+	}
+	public String obtenerJuegoPlataforma(String name){
+		int i;
+		for(i=0;i<juegos.size();i++) {
+			if(juegos.get(i).getName()==name)return juegos.get(i).getPlataforma();
+		}
+		return null;
+	}
+	public double obtenerJuegoRate(String name){
+		int i;
+		for(i=0;i<juegos.size();i++) {
+			if(juegos.get(i).getName()==name)return juegos.get(i).getRate();
+		}
+		return 0;
+	}
+	public int obtenerJuegoStock(String name){
+		int i;
+		for(i=0;i<juegos.size();i++) {
+			if(juegos.get(i).getName()==name)return juegos.get(i).getStock();
+		}
+		return 0;
+	}
+	public int obtenerJuegoTotalstock(String name){
+		int i;
+		for(i=0;i<juegos.size();i++) {
+			if(juegos.get(i).getName()==name)return juegos.get(i).getTotalstock();
+		}
+		return 0;
+	}
+	////
+
 	public Serie obtenerSerie(String name) { // retorna la Serie si la encuentra, null si no
 		int i;
 		for(i=0;i<series.size();i++) {
@@ -133,6 +186,65 @@ public class Producto {
 		}
 		return null;
 	}
+
+	////Zona de obtenerSerie encapsulado
+		public String obtenerSerieName(String name){
+		int i;
+		for(i=0;i<series.size();i++) {
+			if(series.get(i).getName()==name)return series.get(i).getName();
+		}
+		return null;
+	}
+	public String[] obtenerSerieGeneros(String name){
+		int i;
+		for(i=0;i<series.size();i++) {
+			if(series.get(i).getName()==name)return series.get(i).getGeneros();
+		}
+		return null;
+	}
+	public int obtenerSerieYear(String name){
+		int i;
+		for(i=0;i<series.size();i++) {
+			if(series.get(i).getName()==name)return series.get(i).getYear();
+		}
+		return 0;
+	}
+	public String obtenerSerieDuracion(String name){
+		int i;
+		for(i=0;i<series.size();i++) {
+			if(series.get(i).getName()==name)return series.get(i).getDuracion();
+		}
+		return null;
+	}
+	public int obtenerSerieCapitulos(String name){
+		int i;
+		for(i=0;i<series.size();i++) {
+			if(series.get(i).getName()==name)return series.get(i).getCapitulos();
+		}
+		return 0;
+	}
+	public double obtenerSerieRate(String name){
+		int i;
+		for(i=0;i<series.size();i++) {
+			if(series.get(i).getName()==name)return series.get(i).getRate();
+		}
+		return 0;
+	}
+	public int obtenerSerieStock(String name){
+		int i;
+		for(i=0;i<series.size();i++) {
+			if(series.get(i).getName()==name)return series.get(i).getStock();
+		}
+		return 0;
+	}
+	public int obtenerSerieTotalstock(String name){
+		int i;
+		for(i=0;i<series.size();i++) {
+			if(series.get(i).getName()==name)return series.get(i).getTotalstock();
+		}
+		return 0;
+	}
+	////
 
 //Zona de Quitar
 	public boolean quitarPelicula(String name) { //remueve una Pelicula por su nombre y retorna true, si no esta, retorna false

@@ -7,9 +7,10 @@ public class Serie {
 	private String duracion;
 	private int capitulos;
 	private double rate;
-		private int stock;
+	private int stock;
 	private int totalstock;
-	
+
+	//// Constructores
 	public Serie(){
 		name=null;
 		generos= new String[3];
@@ -17,6 +18,19 @@ public class Serie {
 		duracion=null;
 		rate=0;
 	}
+	public Serie(String name, String[] generos, int year, String duracion, int capitulos, double rate, int stock,
+			int totalstock) {
+		this.name = name;
+		this.generos = generos;
+		this.year = year;
+		this.duracion = duracion;
+		this.capitulos = capitulos;
+		this.rate = rate;
+		this.stock = stock;
+		this.totalstock = totalstock;
+	}
+	//// Fin Constructores
+	
 	public String getName(){
 		return name;
 	}
@@ -66,13 +80,5 @@ public class Serie {
 	public void setTotalstock(int totalstock) {
 		this.totalstock = totalstock;
 	}
-
-	public Serie(String name, String[] generos, int year, String duracion,int capitulos, double rate){
-		setName(name);
-		setGeneros(generos);
-		setYear(year);
-		setDuracion(duracion);
-		setCapitulos(capitulos);
-		setRate(rate);
-	}
+	
 }

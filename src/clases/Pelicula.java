@@ -8,7 +8,8 @@ public class Pelicula {
 	private double rate;
 	private int stock;
 	private int totalstock;
-	
+
+	//// Constructores
 	public Pelicula(){
 		name=null;
 		generos= new String[3];
@@ -20,7 +21,6 @@ public class Pelicula {
 	}
 
 	public Pelicula(String name, String[] generos, int year, String duracion, double rate, int stock, int totalstock) {
-		super();
 		this.name = name;
 		this.generos = generos;
 		this.year = year;
@@ -29,6 +29,7 @@ public class Pelicula {
 		this.stock = stock;
 		this.totalstock = totalstock;
 	}
+	//// Fin Constructores
 
 	public String getName(){
 		return name;
