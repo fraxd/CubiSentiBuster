@@ -7,6 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clases.Empresa;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -19,7 +22,7 @@ public class ElegirLocal extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTextField textField;
 
-	public ElegirLocal(int opcion) {
+	public ElegirLocal(Empresa cubiSentiBuster) {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setType(Type.POPUP);
 		setBounds(100, 100, 416, 148);
@@ -48,6 +51,9 @@ public class ElegirLocal extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						int aux=Integer.parseInt(textField.getText());
+						ControlPersonal controlPersonal = new ControlPersonal(cubiSentiBuster,aux);
+						controlPersonal.setVisible(true);
+						dispose();
 
 					}
 					

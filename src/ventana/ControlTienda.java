@@ -45,7 +45,8 @@ public class ControlTienda extends JFrame {
 		JButton btnNewButton_1 = new JButton("Eliminar Tienda");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				TiendaEliminar tiendaEliminar = new TiendaEliminar(cubiSentiBuster);
+				tiendaEliminar.setVisible(true);
 			}
 		});
 		btnNewButton_1.setFont(new Font("Roboto", Font.PLAIN, 16));

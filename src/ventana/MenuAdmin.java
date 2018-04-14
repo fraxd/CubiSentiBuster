@@ -47,12 +47,8 @@ public class MenuAdmin extends JFrame {
 		JButton btnControlTienda = new JButton("Control Tienda");
 		btnControlTienda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*ElegirLocal elegirlocal = new ElegirLocal();
-				elegirlocal.setVisible(true);
-				*/
 				ControlTienda controltienda = new ControlTienda(cubiSentiBuster);
 				controltienda.setVisible(true);
-				
 			}
 		});
 		btnControlTienda.setFont(new Font("Roboto", Font.PLAIN, 14));
@@ -60,6 +56,12 @@ public class MenuAdmin extends JFrame {
 		contentPane.add(btnControlTienda);
 		
 		JButton btnControlPersonal = new JButton("Control Personal");
+		btnControlPersonal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ElegirLocal elegirLocal = new ElegirLocal(cubiSentiBuster);
+				elegirLocal.setVisible(true);
+			}
+		});
 		btnControlPersonal.setFont(new Font("Roboto", Font.PLAIN, 14));
 		btnControlPersonal.setBounds(10, 88, 160, 23);
 		contentPane.add(btnControlPersonal);

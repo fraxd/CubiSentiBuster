@@ -9,7 +9,7 @@ public class Empresa {
 	public Empresa() {
 		usuarios= new ArrayList<Usuario>();
 		tiendas= new ArrayList<Tienda>();
-		Usuario hola = new Usuario(123, "hola", "mauricio", 2,0);
+		Usuario hola = new Usuario(123, "hola", "mauricio", 1,0);
 		agregarUsuario(hola);
 	}
 	
