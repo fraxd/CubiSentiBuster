@@ -5,20 +5,28 @@ import java.util.ArrayList;
 public class Empresa {
 	private ArrayList<Usuario> usuarios;
 	private ArrayList<Tienda> tiendas;
+	private ArrayList<Persona> clientes;
 	
 	public Empresa() {
 		usuarios= new ArrayList<Usuario>();
 		tiendas= new ArrayList<Tienda>();
+		clientes= new ArrayList<Persona>();
 		Usuario hola = new Usuario(123, "hola", "mauricio", 1,0);
 		agregarUsuario(hola);
 	}
 	
-	public boolean agregarUsuario(Usuario n) { //retorna false si el id ya existe, sino, agrega el usuario y retorna true;
+	public Empresa(ArrayList<Usuario> usuarios, ArrayList<Tienda> tiendas, ArrayList<Persona> clientes) {
+		this.usuarios = usuarios;
+		this.tiendas = tiendas;
+		this.clientes= clientes;
+	}
+
+	public boolean agregarUsuario(Usuario usuario) { //retorna false si el id ya existe, sino, agrega el usuario y retorna true; //Falta encapsular
 		int i;
 		for(i=0;i<(usuarios.size());i++) {
-			if(usuarios.get(i).getId()==n.getId())return false;
+			if(usuarios.get(i).getId()==usuario.getId())return false;
 		}
-		usuarios.add(n);
+		usuarios.add(usuario);
 		return true;
 	}
 	
@@ -35,10 +43,15 @@ public class Empresa {
 		return false;
 	}
 	
-	public boolean quitarUsuario(Usuario n) { //Si removio el usuario, retorna true, si no lo hace, retorna false
-		if(usuarios.contains(n)) {
-			usuarios.remove(n);
-			return true;
+	public boolean quitarUsuario(int id, String password) { //Si removio el usuario, retorna true, si no lo hace, retorna false
+		int i;
+		for(i=0;i<(usuarios.size());i++) {
+			if(id==usuarios.get(i).getId()) {
+				if(password.equals(usuarios.get(i).getPass())) {
+					usuarios.remove(i);
+					return true;
+				}
+			}
 		}
 		return false;
 	}
@@ -53,7 +66,7 @@ public class Empresa {
 		return -1; ////En caso de retornar -1, no encontro al usuario
 	}
 
-	public boolean agregarTienda(Tienda tienda) {
+	public boolean agregarTienda(Tienda tienda) { ////encapsulamiento pendiente
 		int i;
 		for(i=0;i<tiendas.size();i++) {
 			if(tiendas.get(i).getIdTienda()==tienda.getIdTienda())return false;
@@ -72,4 +85,36 @@ public class Empresa {
 		}
 		return false;
 	}
+	
+	//// Zona Cliente PD falta aun encapsulamiento
+	public boolean agregarCliente(Persona cliente) {
+		int i;
+		for(i=0;i<clientes.size();i++) {
+			if(cliente.getRut().equals(clientes.get(i).getRut())) {
+				return false;
+			}
+		}
+		clientes.add(cliente);
+		return true;
+	}
+	public boolean quitarCliente(Persona cliente) {
+		int i;
+		for(i=0;i<clientes.size();i++) {
+			if(cliente.getRut().equals(clientes.get(i).getRut())) {
+				clientes.remove(i);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

@@ -53,4 +53,29 @@ public class Tienda {
 		aux=productos.agregarSerie(serie);
 		return aux;
 	}
+	
+	//// Agregar Trabajadores al ArrayList
+	public boolean agregarTrabajadores(Usuario usuario) {
+		int i;
+		for(i=0;i<(trabajadores.size());i++) {
+			if(trabajadores.get(i).getId()==usuario.getId())return false;
+		}
+		trabajadores.add(usuario);
+		return true;
+	}
+	
+	//// Quitar trabajadores al ArrayList
+	public boolean quitarTrabajadores(int id, String password) {
+		int i;
+		for(i=0;i<(trabajadores.size());i++) {
+			if(id==trabajadores.get(i).getId()) {
+				if(password.equals(trabajadores.get(i).getPass())) {
+					trabajadores.remove(i);
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 }

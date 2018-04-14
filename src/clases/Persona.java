@@ -11,10 +11,10 @@ public class Persona {
 	}
 	
 	public Persona(String rut, String[] arriendos) {
-		super();
 		this.rut = rut;
 		this.setArriendos(arriendos);
 	}
+	
 	public String getRut() {
 		return rut;
 	}
@@ -27,4 +27,5 @@ public class Persona {
 	public void setArriendos(String[] arriendos) {
 		this.arriendos = arriendos;
 	}
+	
 }
