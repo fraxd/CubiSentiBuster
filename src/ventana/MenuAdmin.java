@@ -58,8 +58,8 @@ public class MenuAdmin extends JFrame {
 		JButton btnControlPersonal = new JButton("Control Personal");
 		btnControlPersonal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ElegirLocal elegirLocal = new ElegirLocal(cubiSentiBuster);
-				elegirLocal.setVisible(true);
+				ElegirLocal elegirLocal = new ElegirLocal(cubiSentiBuster,1);
+				elegirLocal.setVisible(true);	
 			}
 		});
 		btnControlPersonal.setFont(new Font("Roboto", Font.PLAIN, 14));

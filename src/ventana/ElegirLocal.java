@@ -22,7 +22,7 @@ public class ElegirLocal extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTextField textField;
 
-	public ElegirLocal(Empresa cubiSentiBuster) {
+	public ElegirLocal(Empresa cubiSentiBuster, int opcion) { // opcion 1 = ControlPersonal
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setType(Type.POPUP);
 		setBounds(100, 100, 416, 148);
