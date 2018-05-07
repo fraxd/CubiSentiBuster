@@ -13,12 +13,14 @@ import javax.swing.JList;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
+import java.awt.Font;
 
 public class ControlPersonal extends JFrame {
 
 	public ControlPersonal(Empresa cubiSentiBuster,int idTienda) {
+		getContentPane().setBackground(new Color(63, 81, 181));
 		setTitle("Control Personal");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
@@ -30,11 +32,18 @@ public class ControlPersonal extends JFrame {
 		scrollPane.setViewportView(list);
 		
 		JButton btnAgregarPersonal = new JButton("Agregar Personal");
-		btnAgregarPersonal.setBounds(224, 9, 143, 23);
+		btnAgregarPersonal.setFont(new Font("Roboto", Font.PLAIN, 14));
+		btnAgregarPersonal.setBounds(224, 37, 171, 23);
 		getContentPane().add(btnAgregarPersonal);
 		
 		JButton btnEliminarPersonal = new JButton("Eliminar Personal");
-		btnEliminarPersonal.setBounds(224, 43, 143, 23);
+		btnEliminarPersonal.setFont(new Font("Roboto", Font.PLAIN, 14));
+		btnEliminarPersonal.setBounds(224, 81, 171, 23);
 		getContentPane().add(btnEliminarPersonal);
+		
+		JButton btnNewButton = new JButton("Modificar Personal");
+		btnNewButton.setFont(new Font("Roboto", Font.PLAIN, 14));
+		btnNewButton.setBounds(224, 123, 171, 23);
+		getContentPane().add(btnNewButton);
 	}
 }
