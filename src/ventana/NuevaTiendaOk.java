@@ -13,6 +13,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class NuevaTiendaOk extends JDialog {
+	/*
+	 * Se ejecuta este aviso cuando se crea la tienda correctamente
+	 */
 
 	private final JPanel contentPanel = new JPanel();
 

@@ -21,6 +21,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
+	/*
+	 * Ventana de Login
+	 */
 
 	private JPanel contentPane;
 	private JTextField userField;
@@ -66,7 +69,6 @@ public class Login extends JFrame {
 				int userAux;
 				String user = userField.getText().toString();
 				userAux=Integer.parseInt(user);
-				//String pass = String.valueOf(JPasswordField.getPassword());
 				char[] passAux = passwordField.getPassword();
 				String password = String.valueOf(passAux);
 				aux = cubiSentiBuster.verificarUsuario(userAux,password);

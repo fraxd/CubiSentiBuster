@@ -25,7 +25,7 @@ public class ElegirLocal extends JDialog {
 	public ElegirLocal(Empresa cubiSentiBuster, int opcion) { // opcion 1 = ControlPersonal
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setType(Type.POPUP);
-		setBounds(100, 100, 416, 148);
+		setBounds(100, 100, 415, 143);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -51,9 +51,15 @@ public class ElegirLocal extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						int aux=Integer.parseInt(textField.getText());
-						ControlPersonal controlPersonal = new ControlPersonal(cubiSentiBuster,aux);
-						controlPersonal.setVisible(true);
-						dispose();
+						if(cubiSentiBuster.verifTienda(aux)) {
+							ControlPersonal controlPersonal = new ControlPersonal(cubiSentiBuster,aux);
+							controlPersonal.setVisible(true);
+							dispose();
+						}
+						else {
+							ElegirLocalError elegirLocalError = new ElegirLocalError();
+							elegirLocalError.setVisible(true);
+						}
 
 					}
 					

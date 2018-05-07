@@ -43,6 +43,7 @@ public class Empresa {
 		return false;
 	}
 	
+	
 	public boolean quitarUsuario(int id, String password) { //Si removio el usuario, retorna true, si no lo hace, retorna false
 		int i;
 		for(i=0;i<(usuarios.size());i++) {
@@ -80,6 +81,15 @@ public class Empresa {
 		for(i=0;i<tiendas.size();i++) {
 			if(tiendas.get(i).getIdTienda()==idTienda) {
 				tiendas.remove(i);
+				return true;
+			}
+		}
+		return false;
+	}
+	public boolean verifTienda(int idTienda) { //Verifica si existe determinada tienda
+		int i;
+		for(i=0;i<tiendas.size();i++) {
+			if(tiendas.get(i).getIdTienda()==idTienda) {
 				return true;
 			}
 		}

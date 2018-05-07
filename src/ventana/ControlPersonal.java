@@ -19,7 +19,7 @@ public class ControlPersonal extends JFrame {
 
 	public ControlPersonal(Empresa cubiSentiBuster,int idTienda) {
 		getContentPane().setBackground(new Color(63, 81, 181));
-		setTitle("Control Personal");
+		setTitle("Control Personal    ID TIENDA: " + idTienda);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
