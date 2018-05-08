@@ -2,7 +2,8 @@ package clases;
 
 public class Persona {
 
-	private String rut;
+	private String rut; //Sin puntos
+	private String nombre;
 	private String[] arriendos;
 	
 	public Persona() {

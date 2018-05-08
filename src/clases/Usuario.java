@@ -1,7 +1,7 @@
 package clases;
 
 public class Usuario {
-	private int idUser;
+	private int idUser; //RUT SIN DIGITO VERIFICADOR NI PUNTOS
 	private String pass;
 	private String nombre;
 	private int level;

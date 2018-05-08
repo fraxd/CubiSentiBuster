@@ -19,6 +19,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import ventana.admin.*;
 
 public class Login extends JFrame {
 	/*

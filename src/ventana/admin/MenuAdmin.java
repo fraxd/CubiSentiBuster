@@ -1,4 +1,4 @@
-package ventana;
+package ventana.admin;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import clases.Empresa;
+import ventana.Login;
 
 import javax.swing.JButton;
 import java.awt.Font;

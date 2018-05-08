@@ -1,4 +1,4 @@
-package ventana;
+package ventana.admin;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -14,6 +14,8 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ControlPersonal extends JFrame {
 
@@ -32,6 +34,12 @@ public class ControlPersonal extends JFrame {
 		scrollPane.setViewportView(list);
 		
 		JButton btnAgregarPersonal = new JButton("Agregar Personal");
+		btnAgregarPersonal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
 		btnAgregarPersonal.setFont(new Font("Roboto", Font.PLAIN, 14));
 		btnAgregarPersonal.setBounds(224, 37, 171, 23);
 		getContentPane().add(btnAgregarPersonal);
