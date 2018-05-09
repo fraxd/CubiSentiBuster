@@ -11,14 +11,27 @@ import java.awt.Color;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
+
+import clases.Empresa;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JPasswordField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AgregarPersonal extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
+	private JTextField fieldRut;
+	private JTextField fieldName;
+	private JPasswordField passField;
+	private JPasswordField passField1;
 
-	public AgregarPersonal() {
+	public AgregarPersonal(Empresa cubiSentiBuster) {
 		setTitle("Nuevo Personal");
 		getContentPane().setBackground(new Color(48, 63, 159));
 		setBounds(100, 100, 499, 348);
@@ -57,6 +70,36 @@ public class AgregarPersonal extends JDialog {
 		lblRepetirContrasea.setFont(new Font("Roboto", Font.BOLD, 16));
 		lblRepetirContrasea.setBounds(32, 172, 173, 14);
 		contentPanel.add(lblRepetirContrasea);
+		
+		fieldRut = new JTextField();
+		fieldRut.setBounds(228, 30, 220, 20);
+		contentPanel.add(fieldRut);
+		fieldRut.setColumns(10);
+		
+		fieldName = new JTextField();
+		fieldName.setBounds(228, 66, 220, 20);
+		contentPanel.add(fieldName);
+		fieldName.setColumns(10);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Roboto", Font.PLAIN, 14));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"1.- Usuario", "2.- Encargado de Tienda", "3.- Administrador"}));
+		comboBox.setBounds(228, 102, 220, 23);
+		contentPanel.add(comboBox);
+		
+		passField = new JPasswordField();
+		passField.setBounds(228, 136, 220, 20);
+		contentPanel.add(passField);
+		
+		passField1 = new JPasswordField();
+		passField1.setBounds(228, 171, 220, 20);
+		contentPanel.add(passField1);
+		
+		JLabel labelError = new JLabel("");
+		labelError.setForeground(Color.RED);
+		labelError.setFont(new Font("Roboto", Font.PLAIN, 14));
+		labelError.setBounds(32, 228, 416, 14);
+		contentPanel.add(labelError);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setBorder(new EmptyBorder(0, 0, 0, 0));
@@ -65,12 +108,40 @@ public class AgregarPersonal extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						
+						int errorCode =0;
+						String user = fieldRut.getText().toString();
+						int userAux=Integer.parseInt(user);
+						String name =fieldName.getText().toString();
+						int seleccion = comboBox.getSelectedIndex(); 
+						char[] passAux = passField.getPassword(); // Se obtiene contraseña de passField
+						String pass1= String.valueOf(passAux);
+						passAux=passField1.getPassword();//se obtiene contraseña de passField1
+						String pass2 = String.valueOf(passAux);
+						if(cubiSentiBuster.verifPassword(pass1, pass2)) {
+							
+						}
+						errorCode =1;
+						labelError.setText("Error campeon");
+						
+						
+						
+						
+					}
+				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+					}
+				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}

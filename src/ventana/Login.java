@@ -67,9 +67,9 @@ public class Login extends JFrame {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				boolean aux;
-				int userAux;
+
 				String user = userField.getText().toString();
-				userAux=Integer.parseInt(user);
+				int userAux=Integer.parseInt(user);
 				char[] passAux = passwordField.getPassword();
 				String password = String.valueOf(passAux);
 				aux = cubiSentiBuster.verificarUsuario(userAux,password);

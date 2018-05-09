@@ -118,7 +118,11 @@ public class Empresa {
 		return false;
 	}
 	
-	
+	//// Otros Metodos
+	public boolean verifPassword(String pass1, String pass2) {
+		if(pass1.equals(pass2))return true;
+		return false;
+	}
 	
 	
 	
