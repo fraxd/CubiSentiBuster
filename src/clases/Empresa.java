@@ -1,6 +1,11 @@
 package clases;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import com.csvreader.CsvWriter;
 
 public class Empresa {
 	private ArrayList<Usuario> usuarios;
@@ -143,13 +148,32 @@ public class Empresa {
 	
 	public boolean grabUsuarios() {
 		/// Pronto, muy pronto - http://www.myutilsjava.net/tutoriales/index.php/java/49-generar-y-leer-csv-desde-java
+		String outputFile = "csv/ArchivoEmpleados.csv";
+		boolean alreadyExists = new File(outputFile).exists();
+		
+		if(alreadyExists) {
+			File ArchivoEmpleados = new File(outputFile);
+			ArchivoEmpleados.delete();
+		}
+		try {
+			CsvWriter csvOutput = new CsvWriter(new FileWriter(outputFile,true),',');
+			
+			csvOutput.write("IdUser");
+			csvOutput.write("Pass");
+			csvOutput.write("Nombre");
+			csvOutput.write("level");
+			csvOutput.write("local");
+			
+			for(Usuario user : usuarios) {
+				
+				csvOutput.write(String.valueOf(user.getId()));
+				csvOutput.write(user.getPass());
+				csvOutput.write(user.getName());
+				csvOutput.write(String.valueOf(user.getLevel()));
+				csvOutput.write(String.valueOf(user.getLocal()));
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }
