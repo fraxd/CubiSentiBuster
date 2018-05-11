@@ -61,13 +61,13 @@ public class NuevaTienda extends JDialog {
 						Tienda tienda = new Tienda();
 						tienda.setIdTienda(idTienda);
 						if(cubiSentiBuster.agregarTienda(tienda)) {
-							NuevaTiendaOk nuevaTiendaOk = new NuevaTiendaOk();
-							nuevaTiendaOk.setVisible(true);
+							DialogInf dialogInf = new DialogInf(0); // tipo = 0 - tienda creada correctamente
+							dialogInf.setVisible(true);
 							dispose();
 						}
 						else {
-							NuevaTiendaError error = new NuevaTiendaError();
-							error.setVisible(true);
+							DialogInf dialogInf = new DialogInf(1);// tipo = 1 - Error Tienda Nueva
+							dialogInf.setVisible(true);
 						}
 						
 					}

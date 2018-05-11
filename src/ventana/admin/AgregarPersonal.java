@@ -31,7 +31,7 @@ public class AgregarPersonal extends JDialog {
 	private JPasswordField passField;
 	private JPasswordField passField1;
 
-	public AgregarPersonal(Empresa cubiSentiBuster) {
+	public AgregarPersonal(Empresa cubiSentiBuster, int idTienda) {
 		setTitle("Nuevo Personal");
 		getContentPane().setBackground(new Color(48, 63, 159));
 		setBounds(100, 100, 499, 348);
@@ -111,20 +111,26 @@ public class AgregarPersonal extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						
-						int errorCode =0;
 						String user = fieldRut.getText().toString();
 						int userAux=Integer.parseInt(user);
 						String name =fieldName.getText().toString();
-						int seleccion = comboBox.getSelectedIndex(); 
+						int seleccion = comboBox.getSelectedIndex() + 1; 
 						char[] passAux = passField.getPassword(); // Se obtiene contraseña de passField
 						String pass1= String.valueOf(passAux);
 						passAux=passField1.getPassword();//se obtiene contraseña de passField1
 						String pass2 = String.valueOf(passAux);
 						if(cubiSentiBuster.verifPassword(pass1, pass2)) {
-							
+							if(cubiSentiBuster.agregarUsuario(userAux, pass1, name, seleccion, idTienda)) {
+								DialogInf dialogInf = new DialogInf(4); // Tipo = 4 - Usuario Agregado Correctamente
+								dialogInf.setVisible(true);
+								dispose();
+							}
+							else {
+								DialogInf dialogInf = new DialogInf(5); // tipo =5 - Error Agregar Usuario
+								dialogInf.setVisible(true);
+							}
 						}
-						errorCode =1;
-						labelError.setText("Error campeon");
+						else labelError.setText("Error las contraseñas no son iguales");
 						
 						
 						

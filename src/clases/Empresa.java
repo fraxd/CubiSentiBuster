@@ -11,8 +11,12 @@ public class Empresa {
 		usuarios= new ArrayList<Usuario>();
 		tiendas= new ArrayList<Tienda>();
 		clientes= new ArrayList<Persona>();
+		
+		// Datos de Prueba
 		Usuario hola = new Usuario(123, "hola", "mauricio", 1,0);
 		agregarUsuario(hola);
+		Tienda tienda = new Tienda(100);
+		agregarTienda(tienda);
 	}
 	
 	public Empresa(ArrayList<Usuario> usuarios, ArrayList<Tienda> tiendas, ArrayList<Persona> clientes) {
@@ -28,6 +32,17 @@ public class Empresa {
 		}
 		usuarios.add(usuario);
 		return true;
+	}
+	public boolean agregarUsuario(int idUser, String pass, String name, int level, int local) {
+		int i;
+		for(i=0;i<(usuarios.size());i++) {
+			if(usuarios.get(i).getId()==idUser)return false;
+		}
+		Usuario nuevo = new Usuario(idUser,pass,name,level,local);
+		usuarios.add(nuevo);
+		return true;
+		
+		
 	}
 	
 	public boolean verificarUsuario(int id, String password) { // Busca y retorna usuario (Verifica el pass para retornar el usuario)
@@ -122,6 +137,12 @@ public class Empresa {
 	public boolean verifPassword(String pass1, String pass2) {
 		if(pass1.equals(pass2))return true;
 		return false;
+	}
+	
+	//// Guardado en Archivos 
+	
+	public boolean grabUsuarios() {
+		/// Pronto, muy pronto - http://www.myutilsjava.net/tutoriales/index.php/java/49-generar-y-leer-csv-desde-java
 	}
 	
 	

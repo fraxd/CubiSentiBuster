@@ -36,7 +36,7 @@ public class ControlPersonal extends JFrame {
 		JButton btnAgregarPersonal = new JButton("Agregar Personal");
 		btnAgregarPersonal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AgregarPersonal agregarPersonal = new AgregarPersonal(cubiSentiBuster);
+				AgregarPersonal agregarPersonal = new AgregarPersonal(cubiSentiBuster, idTienda);
 				agregarPersonal.setVisible(true);
 				
 			}

@@ -64,6 +64,11 @@ public class Usuario {
 
 		return aux;
 	}
+	public String[] generarStringCSV() {
+		String[] datos = {String.valueOf(idUser),pass,nombre,String.valueOf(level),String.valueOf(local)};
+		return datos;
+	}
+	
 }
 
 

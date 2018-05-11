@@ -53,13 +53,13 @@ public class TiendaEliminar extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						int idTienda = Integer.parseInt(textField.getText());
 						if(cubiSentiBuster.quitarTienda(idTienda)) {
-							TiendaEliminarOk tiendaEliminarOk = new TiendaEliminarOk();
-							tiendaEliminarOk.setVisible(true);
+							DialogInf dialogInf = new DialogInf(2); // tipo = 2 - Tienda Eliminada Correctamente
+							dialogInf.setVisible(true);
 							dispose();
 						}
 						else {
-							TiendaEliminarError tiendaEliminarError = new TiendaEliminarError();
-							tiendaEliminarError.setVisible(true);
+							DialogInf dialogInf = new DialogInf(3); // tipo = 3 - Tienda Error Eliminar
+							dialogInf.setVisible(true);
 						}
 					}
 				});
