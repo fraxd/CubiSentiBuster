@@ -3,19 +3,31 @@ package clases;
 import java.util.ArrayList;
 
 public class Tienda {
+	/*
+		Actualizada tienda, con nombre y direccion.-
+	*/
 	
 	private int idTienda;
+	private String nombre;
+	private String direccion;
 	private ArrayList<Usuario> trabajadores;
 	private Producto productos;
 	
 	public Tienda() {
 		this.idTienda = 0;
+		this.nombre = null;
+		this.direccion = null;
 		trabajadores= new ArrayList<Usuario>();
 		this.productos= new Producto();
 	}
 	
-	public Tienda(int idTienda) {
+	public Tienda(int idTienda) { ///Eliminar pronto
 		this.idTienda =idTienda;
+	}
+	public Tienda(int idTienda, String nombre, String direccion){
+		this.idTienda = idTienda;
+		this.nombre = nombre;
+		this.Direccion = direccion;
 	}
 	
 	public Tienda(int idTienda, ArrayList<Usuario> trabajadores, Producto productos) {
@@ -27,8 +39,20 @@ public class Tienda {
 	public int getIdTienda() {
 		return idTienda;
 	}
+	public String getNombre(){
+		return nombre;
+	}
+	public String getDir(){
+		return direccion;
+	}
 	public void setIdTienda(int idTienda) {
 		this.idTienda = idTienda;
+	}
+	public void setNombre(String nombre){
+		this.nombre=nombre;
+	}
+	public void setDir(String dir){
+		this.direccion=dir;
 	}
 	
 	public ArrayList<Usuario> getTrabajadores() {

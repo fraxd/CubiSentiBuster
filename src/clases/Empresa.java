@@ -163,6 +163,7 @@ public class Empresa {
 			csvOutput.write("Nombre");
 			csvOutput.write("level");
 			csvOutput.write("local");
+			csvOutput.endRecord();			
 			
 			for(Usuario user : usuarios) {
 				
@@ -171,8 +172,39 @@ public class Empresa {
 				csvOutput.write(user.getName());
 				csvOutput.write(String.valueOf(user.getLevel()));
 				csvOutput.write(String.valueOf(user.getLocal()));
+				csvOutput.endRecord();
 			}
+
+			csvOutput.close();			
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public boolean grabTiendas(){
+		String outputFile ="csv/ArchivoTiendas.csv";
+		boolean alreadyExists = new File(outputFile).exists();
+
+		if(alreadyExists){
+			File ArchivoTiendas = new File(outputFile);
+			ArchivoTiendas.delete();
+		}
+		try{
+			CsvWriter csvOutput = newc CsvWriter(new FileWriter(outputFile,true),',');
+
+			csvOutput.write("IdTienda");
+			csvOutput.write("Nombre");
+			csvOutput.write("Direccion");
+			csvOutput.endRecord();
+
+			for(Tienda store : tiendas){
+				csvOutput.write(String.valueOf(store.getIdTienda()));
+				csvOutput.write(store.getNombre()):
+				csvOutput.write(store.getDir());
+				csvOutput.endRecord();
+			}
+			csvOutput.close();
+		} catch (IOException e){
 			e.printStackTrace();
 		}
 	}
