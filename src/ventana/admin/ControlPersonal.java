@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 import clases.Empresa;
 import java.awt.Color;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
@@ -22,7 +23,14 @@ public class ControlPersonal extends JFrame {
 	public ControlPersonal(Empresa cubiSentiBuster,int idTienda) {
 		getContentPane().setBackground(new Color(63, 81, 181));
 		setTitle("Control Personal    ID TIENDA: " + idTienda);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		
+		addWindowListener(new java.awt.event.WindowAdapter(){
+			@Override
+			public void windowsClosing(java.awt.event.WindowEvent evt) {
+				closeAndSave(cubiSentiBuster);
+			}
+		});
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
@@ -54,5 +62,12 @@ public class ControlPersonal extends JFrame {
 		btnNewButton.setFont(new Font("Roboto", Font.PLAIN, 14));
 		btnNewButton.setBounds(224, 123, 171, 23);
 		getContentPane().add(btnNewButton);
+	}
+	
+	public void closeAndSave(Empresa cubiSentiBuster) {
+		if (JOptionPane.showConfirmDialog(rootPane, "¿Desea realmente salir del sistema?", "Salir del sistema", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+				System.exit(0);
+				cubiSentiBuster.grabUsuarios();
+		}
 	}
 }

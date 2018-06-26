@@ -22,6 +22,8 @@ public class Empresa {
 		agregarUsuario(hola);
 		Tienda tienda = new Tienda(100);
 		agregarTienda(tienda);
+		//File Folder = new File("csv");
+		grabUsuarios();
 	}
 	
 	public Empresa(ArrayList<Usuario> usuarios, ArrayList<Tienda> tiendas, ArrayList<Persona> clientes) {
@@ -175,9 +177,11 @@ public class Empresa {
 				csvOutput.endRecord();
 			}
 
-			csvOutput.close();			
+			csvOutput.close();	
+			return true;
 		} catch (IOException e) {
 			e.printStackTrace();
+			return false;
 		}
 	}
 
@@ -190,7 +194,7 @@ public class Empresa {
 			ArchivoTiendas.delete();
 		}
 		try{
-			CsvWriter csvOutput = newc CsvWriter(new FileWriter(outputFile,true),',');
+			CsvWriter csvOutput = new CsvWriter(new FileWriter(outputFile,true),',');
 
 			csvOutput.write("IdTienda");
 			csvOutput.write("Nombre");
@@ -199,13 +203,15 @@ public class Empresa {
 
 			for(Tienda store : tiendas){
 				csvOutput.write(String.valueOf(store.getIdTienda()));
-				csvOutput.write(store.getNombre()):
+				csvOutput.write(store.getNombre());
 				csvOutput.write(store.getDir());
 				csvOutput.endRecord();
 			}
 			csvOutput.close();
+			return true;
 		} catch (IOException e){
 			e.printStackTrace();
+			return false;
 		}
 	}
 }
