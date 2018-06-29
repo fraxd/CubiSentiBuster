@@ -15,7 +15,7 @@ public class Usuario {
 		local=0;
 	}
 		
-	public Usuario(int idUser, String pass, String nombre, int level, int local) {
+	public Usuario(int idUser, String pass, String nombre, int level, int local) { // level = 1 - Admin // Level = 2 - Encargado local // level = 3 - user 
 		this.idUser = idUser;
 		this.pass = pass;
 		this.nombre = nombre;

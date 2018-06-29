@@ -22,36 +22,42 @@ public class ControlTienda extends JFrame {
 	private JPanel contentPane;
 
 	public ControlTienda(Empresa cubiSentiBuster) {
+		setTitle("Control Tienda");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 268, 207);
+		setBounds(100, 100, 371, 280);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(77, 182, 172));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Agregar Tienda");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnAgregar = new JButton("Agregar Tienda");
+		btnAgregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				NuevaTienda nuevatienda = new NuevaTienda(cubiSentiBuster);
 				nuevatienda.setVisible(true);
 				
 			}
 		});
-		btnNewButton.setFont(new Font("Roboto", Font.PLAIN, 16));
-		btnNewButton.setBounds(27, 59, 200, 23);
-		contentPane.add(btnNewButton);
+		btnAgregar.setFont(new Font("Roboto", Font.PLAIN, 16));
+		btnAgregar.setBounds(69, 59, 200, 23);
+		contentPane.add(btnAgregar);
 		
-		JButton btnNewButton_1 = new JButton("Eliminar Tienda");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnEliminar = new JButton("Eliminar Tienda");
+		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TiendaEliminar tiendaEliminar = new TiendaEliminar(cubiSentiBuster);
 				tiendaEliminar.setVisible(true);
 			}
 		});
-		btnNewButton_1.setFont(new Font("Roboto", Font.PLAIN, 16));
-		btnNewButton_1.setBounds(27, 107, 200, 23);
-		contentPane.add(btnNewButton_1);
+		btnEliminar.setFont(new Font("Roboto", Font.PLAIN, 16));
+		btnEliminar.setBounds(69, 106, 200, 23);
+		contentPane.add(btnEliminar);
+		
+		JButton btnModificar = new JButton("Modificar Tienda");
+		btnModificar.setFont(new Font("Roboto", Font.PLAIN, 16));
+		btnModificar.setBounds(69, 151, 200, 23);
+		contentPane.add(btnModificar);
 	}
 
 }

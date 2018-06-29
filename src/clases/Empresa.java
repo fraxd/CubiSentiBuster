@@ -80,10 +80,12 @@ public class Empresa {
 	}
 
 	public int obtenerLevelUsuario(int userAux) {
-		int i;
+		int i, aux;
 		for(i=0;i<(usuarios.size());i++) {
 			if(userAux==usuarios.get(i).getId()) {
-					return usuarios.get(i).getLevel();
+					aux=usuarios.get(i).getLevel();
+					return aux;
+					//return usuarios.get(i).getLevel();
 			}
 		}
 		return -1; ////En caso de retornar -1, no encontro al usuario

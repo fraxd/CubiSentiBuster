@@ -81,7 +81,7 @@ public class Login extends JFrame {
 					}
 
 					else {
-						VMenuPrincipal vmenuprincipal = new VMenuPrincipal();
+						VMenuPrincipal vmenuprincipal = new VMenuPrincipal(cubiSentiBuster, userAux);
 						setVisible(false);
 						vmenuprincipal.setVisible(true);
 					}
