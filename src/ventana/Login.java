@@ -65,23 +65,24 @@ public class Login extends JFrame {
 		btnLogin.setForeground(Color.BLACK);
 		btnLogin.setBackground(Color.WHITE);
 		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) { // Funcionamiento del boton Ingresar
 				boolean aux;
 
 				String user = userField.getText().toString();
 				int userAux=Integer.parseInt(user);
 				char[] passAux = passwordField.getPassword();
 				String password = String.valueOf(passAux);
-				aux = cubiSentiBuster.verificarUsuario(userAux,password);
+				aux = cubiSentiBuster.verificarUsuario(userAux,password); // Verifica la existencia del usuario y la contraseña 
+				//int local = cubiSentiBuster.obtenerLocal(userAux);
 				if(aux) {
-					if(cubiSentiBuster.obtenerLevelUsuario(userAux)==1) {/// Level = 1 es nivel Administrador
-						MenuAdmin menuadmin = new MenuAdmin(cubiSentiBuster);
+					if(cubiSentiBuster.obtenerLevelUsuario(userAux)==1) {/// Level = 1 es nivel Administrador - menu administrador 
+						MenuAdmin menuadmin = new MenuAdmin(cubiSentiBuster,userAux);
 						menuadmin.setVisible(true);
 						dispose();
 					}
 
 					else {
-						VMenuPrincipal vmenuprincipal = new VMenuPrincipal(cubiSentiBuster, userAux);
+						VMenuPrincipal vmenuprincipal = new VMenuPrincipal(cubiSentiBuster, userAux, 100);
 						setVisible(false);
 						vmenuprincipal.setVisible(true);
 					}

@@ -18,8 +18,10 @@ public class Empresa {
 		clientes= new ArrayList<Persona>();
 		
 		// Datos de Prueba
-		Usuario hola = new Usuario(123, "hola", "mauricio", 1,0);
+		Usuario hola = new Usuario(123, "hola", "mauricio", 3,100); ///// Usuario noob sin privilegios
 		agregarUsuario(hola);
+		agregarUsuario(124,"hola","caca",1,0);
+		
 		Tienda tienda = new Tienda(100);
 		agregarTienda(tienda);
 		//File Folder = new File("csv");

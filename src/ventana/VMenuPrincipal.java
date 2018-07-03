@@ -1,8 +1,5 @@
 package ventana;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -23,7 +20,7 @@ public class VMenuPrincipal extends JFrame {
 	private JPanel contentPane;
 
 	
-	public VMenuPrincipal(Empresa cubiSentiBuster, int userAux) {
+	public VMenuPrincipal(Empresa cubiSentiBuster, int userAux, int local) {
 		setTitle("Menu Principal");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,7 +36,7 @@ public class VMenuPrincipal extends JFrame {
 		lblBienvenido.setBounds(10, 11, 117, 14);
 		contentPane.add(lblBienvenido);
 		
-		JLabel lblNombreUser = new JLabel(""+user);
+		JLabel lblNombreUser = new JLabel(""+userAux);
 		lblNombreUser.setFont(new Font("Roboto", Font.ITALIC, 20));
 		lblNombreUser.setBounds(137, 11, 125, 14);
 		contentPane.add(lblNombreUser);
@@ -77,6 +74,18 @@ public class VMenuPrincipal extends JFrame {
 		btnPersonal.setFont(new Font("Roboto", Font.PLAIN, 16));
 		btnPersonal.setBounds(296, 115, 234, 30);
 		contentPane.add(btnPersonal);
+		
+		JButton btnNewButton = new JButton("Cerrar Sesion");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Login login = new Login(cubiSentiBuster);
+				login.setVisible(true);
+			}
+		});
+		btnNewButton.setFont(new Font("Roboto", Font.PLAIN, 14));
+		btnNewButton.setBounds(413, 10, 117, 30);
+		contentPane.add(btnNewButton);
 		
 		if(cubiSentiBuster.obtenerLevelUsuario(userAux)==3) btnPersonal.setEnabled(false);
 		
