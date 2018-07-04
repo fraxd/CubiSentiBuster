@@ -46,6 +46,9 @@ public class VMenuPrincipal extends JFrame {
 		btnGestorArriendos.setFont(new Font("Roboto", Font.PLAIN, 16));
 		btnGestorArriendos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				GestorArriendos gestorArriendos = new GestorArriendos(cubiSentiBuster);
+				gestorArriendos.setVisible(true);
+				
 			}
 		});
 		btnGestorArriendos.setBounds(10, 64, 234, 30);
