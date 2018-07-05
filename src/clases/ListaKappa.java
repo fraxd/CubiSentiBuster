@@ -2,7 +2,7 @@ package clases;
 
 import java.util.ArrayList;
 
-public class ListaKappa {
+public class 	 {
 	private ArrayList<Object> kappa;
 
 	///kappita
