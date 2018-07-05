@@ -38,7 +38,7 @@ public class GestorArriendos extends JFrame {
 
 	
 	/*
-	 * Clase Ventana que contiene las opciones de arriendo, devolucion y perdida de peliculas. Su funcionamiento se basa en el rut del cliente excencialmente
+	 * Clase Ventana que contiene las opciones de arriendo, devolucion y perdida de peliculas. Su funcionamie	nto se basa en el rut del cliente excencialmente
 	 */
 	public GestorArriendos(Empresa cubiSentiBuster) {
 		setBackground(Color.WHITE);

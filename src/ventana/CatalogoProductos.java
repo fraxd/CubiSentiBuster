@@ -7,13 +7,21 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import javax.swing.JTextField;
 import java.awt.Font;
+
+import extras.JPlaceholderTextField;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
 
 public class CatalogoProductos extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtIdProducto;
+	private JPlaceholderTextField txtIdProducto ;
+	private JTable table;
 
 
 	
@@ -26,15 +34,22 @@ public class CatalogoProductos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		txtIdProducto = new JTextField();
-		txtIdProducto.setToolTipText("ID Producto");
+		txtIdProducto = new JPlaceholderTextField("ID Producto");
 		txtIdProducto.setFont(new Font("Roboto", Font.PLAIN, 14));
-		txtIdProducto.setBounds(10, 33, 211, 23);
+		txtIdProducto.setBounds(10, 26, 194, 23);
 		contentPane.add(txtIdProducto);
 		txtIdProducto.setColumns(10);
-		TextPrompt placeholder = new TextPrompt("Apellido Paterno", txtIdProducto);
-		placeholder.changeAlpha(0.75f);
-		placeholder.changeStyle(Font.ITALIC);
-		JOptionPane.showMessageDialog(null, txtIdProducto);
+		
+		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar.setBounds(247, 26, 97, 24);
+		contentPane.add(btnBuscar);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 85, 660, 390);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
 	}
 }
