@@ -1,7 +1,5 @@
 package clases;
 
-import java.util.ArrayList;
-
 public class Tienda {
 	/*
 		Actualizada tienda, con nombre y direccion.-
@@ -10,14 +8,14 @@ public class Tienda {
 	private int idTienda;
 	private String nombre;
 	private String direccion;
-	private ArrayList<Usuario> trabajadores;
+	private ListaKappa trabajadores;
 	private Producto productos;
 	
 	public Tienda() {
 		this.idTienda = 0;
 		this.nombre = null;
 		this.direccion = null;
-		trabajadores= new ArrayList<Usuario>();
+		trabajadores= new ListaKappa();
 		this.productos= new Producto();
 	}
 	
@@ -27,10 +25,10 @@ public class Tienda {
 	public Tienda(int idTienda, String nombre, String direccion){
 		this.idTienda = idTienda;
 		this.nombre = nombre;
-		this.Direccion = direccion;
+		this.direccion = direccion;
 	}
 	
-	public Tienda(int idTienda, ArrayList<Usuario> trabajadores, Producto productos) {
+	public Tienda(int idTienda, ListaKappa trabajadores, Producto productos) {
 		this.idTienda = idTienda;
 		this.trabajadores = trabajadores;
 		this.productos = productos;
@@ -55,10 +53,10 @@ public class Tienda {
 		this.direccion=dir;
 	}
 	
-	public ArrayList<Usuario> getTrabajadores() {
+	public ListaKappa getTrabajadores() {
 		return trabajadores;
 	}
-	public void setTrabajadores(ArrayList<Usuario> trabajadores) {
+	public void setTrabajadores(ListaKappa trabajadores) {
 		this.trabajadores = trabajadores;
 	}
 
@@ -81,20 +79,24 @@ public class Tienda {
 	//// Agregar Trabajadores al ArrayList
 	public boolean agregarTrabajadores(Usuario usuario) {
 		int i;
-		for(i=0;i<(trabajadores.size());i++) {
-			if(trabajadores.get(i).getId()==usuario.getId())return false;
+		Usuario aux;
+		for(i=0;i<(trabajadores.sizeKappa());i++) {
+			aux=(Usuario)trabajadores.getKappa(i);
+			if(aux.getId()==usuario.getId())return false;
 		}
-		trabajadores.add(usuario);
+		trabajadores.addKappa(usuario);
 		return true;
 	}
 	
 	//// Quitar trabajadores al ArrayList
 	public boolean quitarTrabajadores(int id, String password) {
 		int i;
-		for(i=0;i<(trabajadores.size());i++) {
-			if(id==trabajadores.get(i).getId()) {
-				if(password.equals(trabajadores.get(i).getPass())) {
-					trabajadores.remove(i);
+		Usuario aux;
+		for(i=0;i<(trabajadores.sizeKappa());i++) {
+			aux=(Usuario)trabajadores.getKappa(i);
+			if(id==((Usuario) trabajadores.getKappa(i)).getId()) {
+				if(password.equals(aux.getPass())) {
+					trabajadores.removeKappa(i);
 					return true;
 				}
 			}

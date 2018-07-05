@@ -1,11 +1,13 @@
 package clases;
 
-public class listaKappa {
+import java.util.ArrayList;
+
+public class ListaKappa {
 	private ArrayList<Object> kappa;
 
 	///kappita
-	public listaKappa(){
-		kappa= new Arraylist<Object>();
+	public ListaKappa(){
+		kappa= new ArrayList<Object>();
 	}
 
 
@@ -17,17 +19,17 @@ public class listaKappa {
 	}
 
 	///Remueve el objeto en la posicion i de la listaKappa
-	Void removeKappa(int i){
+	void removeKappa(int i){
 		kappa.remove(i);
 	}
 
-	///Otiene el tamaÃ±o de listaKappa
+	///Otiene el tamaño de listaKappa
 	int sizeKappa(){
 		return kappa.size();
 	}
 
-	///AÃ±ade el elemento en la listaKappa
-	Void addKappa(Object objeto){
+	///Añade el elemento en la listaKappa
+	void addKappa(Object objeto){
 		kappa.add(objeto);
 	}
 
