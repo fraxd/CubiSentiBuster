@@ -31,7 +31,7 @@ public class Empresa {
 		
 		// Carga de datos 
 		
-		LeerPersonas();
+		//LeerPersonas();
 		
 	}
 	
@@ -160,6 +160,7 @@ public class Empresa {
 	//// Guardado en Archivos *********************************************************************************************************************//////
 	
 	public boolean grabUsuarios() {
+		int i;
 		/// Pronto, muy pronto - http://www.myutilsjava.net/tutoriales/index.php/java/49-generar-y-leer-csv-desde-java
 		String outputFile = "csv/ArchivoEmpleados.csv";
 		boolean alreadyExists = new File(outputFile).exists();
@@ -178,13 +179,13 @@ public class Empresa {
 			csvOutput.write("local");
 			csvOutput.endRecord();			
 			
-			for(Usuario user : usuarios) {
+			for(i=0;i<usuarios.sizeKappa();i++) {
 				
-				csvOutput.write(String.valueOf(user.getId()));
-				csvOutput.write(user.getPass());
-				csvOutput.write(user.getName());
-				csvOutput.write(String.valueOf(user.getLevel()));
-				csvOutput.write(String.valueOf(user.getLocal()));
+				csvOutput.write(String.valueOf(((Usuario) usuarios.getKappa(i)).getId()));
+				csvOutput.write(((Usuario) usuarios.getKappa(i)).getPass());
+				csvOutput.write(((Usuario) usuarios.getKappa(i)).getName());
+				csvOutput.write(String.valueOf(((Usuario) usuarios.getKappa(i)).getLevel()));
+				csvOutput.write(String.valueOf(((Usuario) usuarios.getKappa(i)).getLocal()));
 				csvOutput.endRecord();
 			}
 
@@ -197,6 +198,7 @@ public class Empresa {
 	}
 
 	public boolean grabTiendas(){
+		int i;
 		String outputFile ="csv/ArchivoTiendas.csv";
 		boolean alreadyExists = new File(outputFile).exists();
 
@@ -212,10 +214,10 @@ public class Empresa {
 			csvOutput.write("Direccion");
 			csvOutput.endRecord();
 
-			for(Tienda store : tiendas){
-				csvOutput.write(String.valueOf(store.getIdTienda()));
-				csvOutput.write(store.getNombre());
-				csvOutput.write(store.getDir());
+			for(i = 0;i<tiendas.sizeKappa();i++){
+				csvOutput.write(String.valueOf(((Tienda) tiendas.getKappa(i)).getIdTienda()));
+				csvOutput.write(((Tienda) tiendas.getKappa(i)).getNombre());
+				csvOutput.write(((Tienda) tiendas.getKappa(i)).getDir());
 				csvOutput.endRecord();
 			}
 			csvOutput.close();
