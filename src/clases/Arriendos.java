@@ -10,6 +10,12 @@ public class Arriendos {
 	boolean estadoEntrega;
 	int atraso; // Son Numeros de dias
 
+	public Arriendos() {
+		//fechaSalida=
+		//fechaEntrega=
+		estadoEntrega=false;
+		atraso=0;
+	}
 
 	public Producto getProducto() {
 		return producto;
