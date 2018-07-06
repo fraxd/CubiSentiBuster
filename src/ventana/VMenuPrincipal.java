@@ -55,12 +55,24 @@ public class VMenuPrincipal extends JFrame {
 		contentPane.add(btnGestorArriendos);
 		
 		JButton btnCatalogo = new JButton("Catalogo Productos");
+		btnCatalogo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CatalogoProductos catalogoProductos = new CatalogoProductos(cubiSentiBuster);
+				catalogoProductos.setVisible(true);
+				
+			}
+		});
 		btnCatalogo.setFont(new Font("Roboto", Font.PLAIN, 16));
 		btnCatalogo.setHorizontalAlignment(SwingConstants.LEFT);
 		btnCatalogo.setBounds(10, 115, 234, 30);
 		contentPane.add(btnCatalogo);
 		
 		JButton btnCliente = new JButton("Gestion de clientes");
+		btnCliente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnCliente.setFont(new Font("Roboto", Font.PLAIN, 16));
 		btnCliente.setHorizontalAlignment(SwingConstants.LEFT);
 		btnCliente.setBounds(10, 163, 234, 30);

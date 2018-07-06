@@ -43,7 +43,7 @@ public class GestorArriendos extends JFrame {
 	public GestorArriendos(Empresa cubiSentiBuster) {
 		setBackground(Color.WHITE);
 		setTitle("Gestor de Arriendos");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 697, 386);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(102, 205, 170));

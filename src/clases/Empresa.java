@@ -1,10 +1,12 @@
 package clases;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 
 public class Empresa {
@@ -25,7 +27,12 @@ public class Empresa {
 		Tienda tienda = new Tienda(100);
 		agregarTienda(tienda);
 		//File Folder = new File("csv");
-		grabUsuarios();
+		
+		
+		// Carga de datos 
+		
+		LeerPersonas();
+		
 	}
 	
 	public Empresa(ArrayList<Usuario> usuarios, ArrayList<Tienda> tiendas, ArrayList<Persona> clientes) {
@@ -150,7 +157,7 @@ public class Empresa {
 		return false;
 	}
 	
-	//// Guardado en Archivos 
+	//// Guardado en Archivos *********************************************************************************************************************//////
 	
 	public boolean grabUsuarios() {
 		/// Pronto, muy pronto - http://www.myutilsjava.net/tutoriales/index.php/java/49-generar-y-leer-csv-desde-java
@@ -218,4 +225,43 @@ public class Empresa {
 			return false;
 		}
 	}
-}
+
+// Lectura de Archivos ******************************************************************************************////
+	public boolean LeerPersonas() { // 
+		try {
+			
+			Persona cliente = new Persona();
+			int aux;
+		    CsvReader personas_import = new CsvReader("csv/ArchivoPersonas.csv");
+	        personas_import.readHeaders();
+	        
+	        while (personas_import.readRecord())
+	        {
+	            String rut = personas_import.get("rut");
+	            String nombres = personas_import.get("nombre");
+	            String telefono = personas_import.get("telefono");
+	            String correo = personas_import.get("Correo");
+	            
+	            aux=Integer.parseInt(telefono);
+	            cliente.setRut(rut);
+	            cliente.setNombre(nombres);
+	            cliente.setTelefono(aux);
+	            cliente.setCorreo(correo);
+	     
+	            agregarCliente(cliente);
+	        }
+
+		}catch(FileNotFoundException e) {     
+			e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+		
+		
+		return false;
+	}
+
+
+	
+	
+}	
