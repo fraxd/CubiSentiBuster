@@ -11,6 +11,7 @@ public class Arriendos {
 	int atraso; // Son Numeros de dias
 
 	public Arriendos() {
+		producto=null;
 		//fechaSalida=
 		//fechaEntrega=
 		estadoEntrega=false;
