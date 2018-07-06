@@ -79,6 +79,12 @@ public class VMenuPrincipal extends JFrame {
 		contentPane.add(btnCliente);
 		
 		JButton btnPass = new JButton("Cambio Contrase\u00F1a");
+		btnPass.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
 		btnPass.setHorizontalAlignment(SwingConstants.RIGHT);
 		btnPass.setFont(new Font("Roboto", Font.PLAIN, 16));
 		btnPass.setBounds(296, 64, 234, 30);
