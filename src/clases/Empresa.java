@@ -18,18 +18,19 @@ public class Empresa {
 		clientes= new ListaKappa();
 		
 		// Datos de Prueba
-		Usuario hola = new Usuario(123, "hola", "mauricio", 3,100); ///// Usuario noob sin privilegios
-		agregarUsuario(hola);
-		agregarUsuario(124,"hola","caca",1,0);
+		//Usuario hola = new Usuario(123, "hola", "mauricio", 3,100); ///// Usuario noob sin privilegios
+		//agregarUsuario(hola);
+		//agregarUsuario(124,"hola","caca",1,0);
 		
 		Tienda tienda = new Tienda(100);
 		agregarTienda(tienda);
 		//File Folder = new File("csv");
 		
 		
-		// Carga de datos 
+		// Carga de datos ****
 		
-		//LeerPersonas();
+		LeerPersonas();
+		leerUsuario();
 		
 	}
 	
@@ -227,7 +228,7 @@ public class Empresa {
 	}
 
 // Lectura de Archivos ******************************************************************************************////
-	public void LeerPersonas() { // 
+	public void LeerPersonas() { // Carga de clientes a partir de un archivo csv
 		try {
 			
 			Persona cliente = new Persona();
@@ -235,8 +236,7 @@ public class Empresa {
 		    CsvReader personas_import = new CsvReader("csv/ArchivoPersonas.csv");
 	        personas_import.readHeaders();
 	        
-	        while (personas_import.readRecord())
-	        {
+	        while (personas_import.readRecord()) {
 	            String rut = personas_import.get("rut");
 	            String nombres = personas_import.get("nombre");
 	            String telefono = personas_import.get("telefono");
@@ -249,7 +249,10 @@ public class Empresa {
 	            cliente.setCorreo(correo);
 	     
 	            agregarCliente(cliente);
+	            
 	        }
+            personas_import.close();
+
 
 		}catch(FileNotFoundException e) {     
 			e.printStackTrace();
@@ -259,8 +262,46 @@ public class Empresa {
 		
 		
 	}
+	
+	public void leerUsuario() { // Carga de los usuarios de Empresa a partir de un archivo csv
+		try {
+			int auxRut, auxLevel, auxLocal;
+			CsvReader usuarios_import = new CsvReader("csv/ArchivoEmpleados.csv");
+			usuarios_import.readHeaders();
+			
+			while(usuarios_import.readRecord()) {
+				String idUser = usuarios_import.get("IdUser");
+				String pass = usuarios_import.get("Pass");
+				String nombre = usuarios_import.get("Nombre");
+				String level = usuarios_import.get("level");
+				String local = usuarios_import.get("local");
+				
+				auxRut = Integer.parseInt(idUser);
+				auxLevel = Integer.parseInt(level);
+				auxLocal = Integer.parseInt(local);
+				
+				agregarUsuario(auxRut, pass, nombre, auxLevel, auxLocal);
+				
+				
+			}
+			usuarios_import.close();
+
+			
+		}catch(FileNotFoundException e) {     
+			e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+		
+	}
+	
+	public void leerTiendas() {
+		
+		
+				
+	}
 
 
 	
 	
-}	
+}//*** FIN ARCHIVO FIN ARCHIVO FIN ARCHIVO FIN ARCHIVO FIN ARCHIVO FIN ARCHVIO	
