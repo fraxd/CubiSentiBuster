@@ -227,7 +227,7 @@ public class Empresa {
 	}
 
 // Lectura de Archivos ******************************************************************************************////
-	public boolean LeerPersonas() { // 
+	public void LeerPersonas() { // 
 		try {
 			
 			Persona cliente = new Persona();
@@ -258,7 +258,6 @@ public class Empresa {
         }
 		
 		
-		return false;
 	}
 
 
