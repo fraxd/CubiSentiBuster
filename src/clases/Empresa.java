@@ -17,19 +17,14 @@ public class Empresa {
 		tiendas= new ListaKappa();
 		clientes= new ListaKappa();
 		
-		// Datos de Prueba
-		//Usuario hola = new Usuario(123, "hola", "mauricio", 3,100); ///// Usuario noob sin privilegios
-		//agregarUsuario(hola);
-		//agregarUsuario(124,"hola","caca",1,0);
-		
 		Tienda tienda = new Tienda(100);
 		agregarTienda(tienda);
 		//File Folder = new File("csv");
 		
 		
-		// Carga de datos ****
+		// Carga de datos ****************************
 		
-		LeerPersonas();
+		leerPersonas();
 		leerUsuario();
 		
 	}
@@ -228,7 +223,7 @@ public class Empresa {
 	}
 
 // Lectura de Archivos ******************************************************************************************////
-	public void LeerPersonas() { // Carga de clientes a partir de un archivo csv
+	public void leerPersonas() { // Carga de clientes a partir de un archivo csv
 		try {
 			
 			Persona cliente = new Persona();

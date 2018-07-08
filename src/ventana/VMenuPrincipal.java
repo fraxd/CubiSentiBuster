@@ -6,6 +6,7 @@ import javax.swing.border.EmptyBorder;
 
 import clases.Empresa;
 import clases.Usuario;
+import ventana.admin.ControlPersonal;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -91,6 +92,12 @@ public class VMenuPrincipal extends JFrame {
 		contentPane.add(btnPass);
 		
 		JButton btnPersonal = new JButton("Control Personal");
+		btnPersonal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ControlPersonal controlPersonal = new ControlPersonal(cubiSentiBuster, local, cubiSentiBuster.obtenerLevelUsuario(userAux));
+				controlPersonal.setVisible(true);
+			}
+		});
 		btnPersonal.setHorizontalAlignment(SwingConstants.RIGHT);
 		btnPersonal.setFont(new Font("Roboto", Font.PLAIN, 16));
 		btnPersonal.setBounds(296, 115, 234, 30);
