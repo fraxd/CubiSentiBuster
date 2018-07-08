@@ -7,10 +7,12 @@ import java.io.IOException;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 
+/*Entre las clases es la más general, pues desde esta se pueden llegar a todas las otras clases */
+
 public class Empresa {
-	private ListaKappa usuarios;
-	private ListaKappa tiendas;
-	private ListaKappa clientes;
+	private ListaKappa usuarios; ///es una lista que contiene los usuarios
+	private ListaKappa tiendas; ///es una lista que contiene las tiendas
+	private ListaKappa clientes; ///es una lista que contiene los clientes
 	
 	public Empresa() {
 		usuarios= new ListaKappa();
@@ -43,7 +45,7 @@ public class Empresa {
 		usuarios.addKappa(usuario);
 		return true;
 	}
-	public boolean agregarUsuario(int idUser, String pass, String name, int level, int local) {
+	public boolean agregarUsuario(int idUser, String pass, String name, int level, int local) { //retorna false si el id ya existe, sino, agrega el usuario y retorna true; forma encapsulada
 		int i;
 		for(i=0;i<(usuarios.sizeKappa());i++) {
 			if(((Usuario) usuarios.getKappa(i)).getId()==idUser)return false;
@@ -82,7 +84,7 @@ public class Empresa {
 		return false;
 	}
 
-	public int obtenerLevelUsuario(int userAux) {
+	public int obtenerLevelUsuario(int userAux) { //Retorna el nivel de usuario, entiendase que el nivel determina los privilegios del usuario
 		int i, aux;
 		for(i=0;i<(usuarios.sizeKappa());i++) {
 			if(userAux==((Usuario) usuarios.getKappa(i)).getId()) {
@@ -94,7 +96,7 @@ public class Empresa {
 		return -1; ////En caso de retornar -1, no encontro al usuario
 	}
 
-	public boolean agregarTienda(Tienda tienda) { ////encapsulamiento pendiente
+	public boolean agregarTienda(Tienda tienda) { /// Agrega una tienda, retorna true si lo logra, false si no  ////encapsulamiento pendiente
 		int i;
 		for(i=0;i<tiendas.sizeKappa();i++) {
 			if(((Tienda) tiendas.getKappa(i)).getIdTienda()==tienda.getIdTienda())return false;
@@ -103,7 +105,7 @@ public class Empresa {
 		return true;
 	}
 	
-	public boolean quitarTienda(int idTienda) {
+	public boolean quitarTienda(int idTienda) { /// Remueve una tienda, retorna true si lo logra, false si no
 		int i;
 		for(i=0;i<tiendas.sizeKappa();i++) {
 			if(((Tienda) tiendas.getKappa(i)).getIdTienda()==idTienda) {
@@ -124,7 +126,7 @@ public class Empresa {
 	}
 	
 	//// Zona Cliente PD falta aun encapsulamiento
-	public boolean agregarCliente(Persona cliente) {
+	public boolean agregarCliente(Persona cliente) { ///Aqui se agrega el cliente, retorna true si lo logra, false si no
 		int i;
 		for(i=0;i<clientes.sizeKappa();i++) {
 			if(cliente.getRut().equals(((Persona) clientes.getKappa(i)).getRut())) {
@@ -134,7 +136,7 @@ public class Empresa {
 		clientes.addKappa(cliente);
 		return true;
 	}
-	public boolean quitarCliente(Persona cliente) {
+	public boolean quitarCliente(Persona cliente) { ///Aqui se remueve el cliente, retorna true si lo logra, false si no
 		int i;
 		for(i=0;i<clientes.sizeKappa();i++) {
 			if(cliente.getRut().equals(((Persona) clientes.getKappa(i)).getRut())) {
@@ -146,14 +148,14 @@ public class Empresa {
 	}
 	
 	//// Otros Metodos
-	public boolean verifPassword(String pass1, String pass2) {
+	public boolean verifPassword(String pass1, String pass2) { ///Compara los password, si coinciden retorna ture, si no, false.
 		if(pass1.equals(pass2))return true;
 		return false;
 	}
 	
 	//// Guardado en Archivos *********************************************************************************************************************//////
 	
-	public boolean grabUsuarios() {
+	public boolean grabUsuarios() { //Graba los usuarios, retorna true si lo logra, false si no
 		int i;
 		/// Pronto, muy pronto - http://www.myutilsjava.net/tutoriales/index.php/java/49-generar-y-leer-csv-desde-java
 		String outputFile = "csv/ArchivoEmpleados.csv";
@@ -191,7 +193,7 @@ public class Empresa {
 		}
 	}
 
-	public boolean grabTiendas(){
+	public boolean grabTiendas(){ //Graba las tiendas, retorna true si lo logra, false si no
 		int i;
 		String outputFile ="csv/ArchivoTiendas.csv";
 		boolean alreadyExists = new File(outputFile).exists();

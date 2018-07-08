@@ -1,9 +1,9 @@
 package clases;
 
 public class Producto {
-	private ListaKappa peliculas;
-	private ListaKappa juegos;
-	private ListaKappa series;
+	private ListaKappa peliculas; ///Es una lista que contiene peliculas
+	private ListaKappa juegos; ///Es una lista que contiene juegos
+	private ListaKappa series; ///Es una lista que contiene series
 	
 	public Producto(){
 		peliculas= new ListaKappa();
@@ -65,49 +65,49 @@ public class Producto {
 		return null;
 	}
 	////Encapsulado Pelicula
-	public String obtenerPeliculaName(String name){
+	public String obtenerPeliculaName(String name){ //retorna el nombre de la pelicula
 		int i;
 		for(i=0;i<peliculas.sizeKappa();i++) {
 			if(((Pelicula) peliculas.getKappa(i)).getName()==name)return ((Pelicula) peliculas.getKappa(i)).getName();
 		}
 		return null;
 	}
-	public String[] obtenerPeliculaGeneros(String name){
+	public String[] obtenerPeliculaGeneros(String name){ ///retorna los generos de la pelicula
 		int i;
 		for(i=0;i<peliculas.sizeKappa();i++) {
 			if(((Pelicula) peliculas.getKappa(i)).getName()==name)return ((Pelicula) peliculas.getKappa(i)).getGeneros();
 		}
 		return null;
 	}
-	public int obtenerPeliculaYear(String name){
+	public int obtenerPeliculaYear(String name){ ///retorna el año de la pelicula
 		int i;
 		for(i=0;i<peliculas.sizeKappa();i++) {
 			if(((Pelicula) peliculas.getKappa(i)).getName()==name)return ((Pelicula) peliculas.getKappa(i)).getYear();
 		}
 		return 0;
 	}
-	public String obtenerPeliculaDuracion(String name){
+	public String obtenerPeliculaDuracion(String name){ ///retorna la duracion de la pelicula
 		int i;
 		for(i=0;i<peliculas.sizeKappa();i++) {
 			if(((Pelicula) peliculas.getKappa(i)).getName()==name)return ((Pelicula) peliculas.getKappa(i)).getDuracion();
 		}
 		return null;
 	}
-	public double obtenerPeliculaRate(String name){
+	public double obtenerPeliculaRate(String name){ ///retorna el rate de la pelicula
 		int i;
 		for(i=0;i<peliculas.sizeKappa();i++) {
 			if(((Pelicula) peliculas.getKappa(i)).getName()==name)return ((Pelicula) peliculas.getKappa(i)).getRate();
 		}
 		return 0;
 	}
-	public int obtenerPeliculaStock(String name){
+	public int obtenerPeliculaStock(String name){ ///retorna el stock de la pelicula
 		int i;
 		for(i=0;i<peliculas.sizeKappa();i++) {
 			if(((Pelicula) peliculas.getKappa(i)).getName()==name)return ((Pelicula) peliculas.getKappa(i)).getStock();
 		}
 		return 0;
 	}
-	public int obtenerPeliculaTotalstock(String name){
+	public int obtenerPeliculaTotalstock(String name){ ///retorna el stock total de la pelicula
 		int i;
 		for(i=0;i<peliculas.sizeKappa();i++) {
 			if(((Pelicula) peliculas.getKappa(i)).getName()==name)return ((Pelicula) peliculas.getKappa(i)).getTotalstock();
@@ -126,49 +126,49 @@ public class Producto {
 	}
 
 	////Encapsulado obtenerJuego
-		public String obtenerJuegoName(String name){
+		public String obtenerJuegoName(String name){ ///retorna el nombre del juego
 		int i;
 		for(i=0;i<juegos.sizeKappa();i++) {
 			if(((Juego) juegos.getKappa(i)).getName()==name)return ((Juego) juegos.getKappa(i)).getName();
 		}
 		return null;
 	}
-	public String[] obtenerJuegoGeneros(String name){
+	public String[] obtenerJuegoGeneros(String name){ ///retorna los generos del juego
 		int i;
 		for(i=0;i<juegos.sizeKappa();i++) {
 			if(((Juego) juegos.getKappa(i)).getName()==name)return ((Juego) juegos.getKappa(i)).getGeneros();
 		}
 		return null;
 	}
-	public int obtenerJuegoYear(String name){
+	public int obtenerJuegoYear(String name){ ///retorna el año del juego
 		int i;
 		for(i=0;i<juegos.sizeKappa();i++) {
 			if(((Juego) juegos.getKappa(i)).getName()==name)return ((Juego) juegos.getKappa(i)).getYear();
 		}
 		return 0;
 	}
-	public String obtenerJuegoPlataforma(String name){
+	public String obtenerJuegoPlataforma(String name){ ///retorna la plataforma del juego
 		int i;
 		for(i=0;i<juegos.sizeKappa();i++) {
 			if(((Juego) juegos.getKappa(i)).getName()==name)return ((Juego) juegos.getKappa(i)).getPlataforma();
 		}
 		return null;
 	}
-	public double obtenerJuegoRate(String name){
+	public double obtenerJuegoRate(String name){ ///retorna el rate del juego
 		int i;
 		for(i=0;i<juegos.sizeKappa();i++) {
 			if(((Juego) juegos.getKappa(i)).getName()==name)return ((Juego) juegos.getKappa(i)).getRate();
 		}
 		return 0;
 	}
-	public int obtenerJuegoStock(String name){
+	public int obtenerJuegoStock(String name){ ///retorna el stock del juego
 		int i;
 		for(i=0;i<juegos.sizeKappa();i++) {
 			if(((Juego) juegos.getKappa(i)).getName()==name)return ((Juego) juegos.getKappa(i)).getStock();
 		}
 		return 0;
 	}
-	public int obtenerJuegoTotalstock(String name){
+	public int obtenerJuegoTotalstock(String name){ ///retorna el stock total del juego
 		int i;
 		for(i=0;i<juegos.sizeKappa();i++) {
 			if(((Juego) juegos.getKappa(i)).getName()==name)return ((Juego) juegos.getKappa(i)).getTotalstock();
@@ -186,56 +186,56 @@ public class Producto {
 	}
 
 	////Zona de obtenerSerie encapsulado
-		public String obtenerSerieName(String name){
+		public String obtenerSerieName(String name){ ///retorna el nombre de la serie
 		int i;
 		for(i=0;i<series.sizeKappa();i++) {
 			if(((Serie) series.getKappa(i)).getName()==name)return ((Serie) series.getKappa(i)).getName();
 		}
 		return null;
 	}
-	public String[] obtenerSerieGeneros(String name){
+	public String[] obtenerSerieGeneros(String name){ ///retorna los generos de la serie
 		int i;
 		for(i=0;i<series.sizeKappa();i++) {
 			if(((Serie) series.getKappa(i)).getName()==name)return ((Serie) series.getKappa(i)).getGeneros();
 		}
 		return null;
 	}
-	public int obtenerSerieYear(String name){
+	public int obtenerSerieYear(String name){ ///retorna el año de la serie
 		int i;
 		for(i=0;i<series.sizeKappa();i++) {
 			if(((Serie) series.getKappa(i)).getName()==name)return ((Serie) series.getKappa(i)).getYear();
 		}
 		return 0;
 	}
-	public String obtenerSerieDuracion(String name){
+	public String obtenerSerieDuracion(String name){ ///retprma la duracion de la serie
 		int i;
 		for(i=0;i<series.sizeKappa();i++) {
 			if(((Serie) series.getKappa(i)).getName()==name)return ((Serie) series.getKappa(i)).getDuracion();
 		}
 		return null;
 	}
-	public int obtenerSerieCapitulos(String name){
+	public int obtenerSerieCapitulos(String name){ ///retorna los capitulos de la serie
 		int i;
 		for(i=0;i<series.sizeKappa();i++) {
 			if(((Serie) series.getKappa(i)).getName()==name)return ((Serie) series.getKappa(i)).getCapitulos();
 		}
 		return 0;
 	}
-	public double obtenerSerieRate(String name){
+	public double obtenerSerieRate(String name){ ///retorna el rate de la serie
 		int i;
 		for(i=0;i<series.sizeKappa();i++) {
 			if(((Serie) series.getKappa(i)).getName()==name)return ((Serie) series.getKappa(i)).getRate();
 		}
 		return 0;
 	}
-	public int obtenerSerieStock(String name){
+	public int obtenerSerieStock(String name){ ///retorna el stock de la serie
 		int i;
 		for(i=0;i<series.sizeKappa();i++) {
 			if(((Serie) series.getKappa(i)).getName()==name)return ((Serie) series.getKappa(i)).getStock();
 		}
 		return 0;
 	}
-	public int obtenerSerieTotalstock(String name){
+	public int obtenerSerieTotalstock(String name){ ///retorna el stock total de la serie
 		int i;
 		for(i=0;i<series.sizeKappa();i++) {
 			if(((Serie) series.getKappa(i)).getName()==name)return ((Serie) series.getKappa(i)).getTotalstock();

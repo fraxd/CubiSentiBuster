@@ -27,7 +27,9 @@ public class Juego {
 		this.totalstock = totalstock;
 	}
 	//// Fin Constructores
-	
+	///////////////////////////////////
+	//////////////////////////////////
+	/*Zona Getters*/
 	public String getName(){
 		return name;
 	}
@@ -49,6 +51,10 @@ public class Juego {
 	public int getTotalstock() {
 		return totalstock;
 	}
+	/*Fin Zona Getters*/
+	/////////////////////////////////////////
+	////////////////////////////////////////
+	/*Zona Setters*/
 	
 	public void setName(String name){
 		this.name=name;	
@@ -71,6 +77,8 @@ public class Juego {
 	public void setTotalstock(int totalstock) {
 		this.totalstock = totalstock;
 	}
+	/*Fin Zona Setters*/
+	/////////////////////////////////////////
 
 	public Juego(String name, String[] generos, int year, String plataforma, double rate){
 		setName(name);

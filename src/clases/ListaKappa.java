@@ -2,6 +2,8 @@ package clases;
 
 import java.util.ArrayList;
 
+/*En resumen, lista capa hace uso de la ArrayList para hacer una lista encapsulada de tipo object para cualquier proposito */
+
 public class ListaKappa 	 {
 	private ArrayList<Object> kappa;
 

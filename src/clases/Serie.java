@@ -30,6 +30,9 @@ public class Serie {
 		this.totalstock = totalstock;
 	}
 	//// Fin Constructores
+	//////////////////////////////////
+	/////////////////////////////////
+	/*Zona Getters*/
 	
 	public String getName(){
 		return name;
@@ -55,6 +58,10 @@ public class Serie {
 	public int getTotalstock() {
 		return totalstock;
 	}
+	/*Fin zona Getters*/
+	//////////////////////
+	/////////////////////
+	/*Zona Setters*/
 	
 	public void setName(String name){
 		this.name=name;	
@@ -81,4 +88,6 @@ public class Serie {
 		this.totalstock = totalstock;
 	}
 	
+	/*Fin zona Setters*/
+	///////////////////////////
 }

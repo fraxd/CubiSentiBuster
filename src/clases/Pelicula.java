@@ -9,6 +9,7 @@ public class Pelicula {
 	private int stock;
 	private int totalstock;
 
+	///////////////////////////////
 	//// Constructores
 	public Pelicula(){
 		name=null;
@@ -30,7 +31,10 @@ public class Pelicula {
 		this.totalstock = totalstock;
 	}
 	//// Fin Constructores
-
+	////////////////////////////////
+	///////////////////////////////
+	/*Zona de Getters */
+	
 	public String getName(){
 		return name;
 	}
@@ -52,6 +56,11 @@ public class Pelicula {
 	public int getTotalstock() {
 		return totalstock;
 	}
+	
+	/*Fin zona Getters*/
+	//////////////////////////////////////
+	/////////////////////////////////////
+	/*Zona Setters*/
 	
 	public void setName(String name){
 		this.name=name;	
@@ -75,4 +84,6 @@ public class Pelicula {
 		this.totalstock = totalstock;
 	}
 	
+	/*Fin zona Setters */
+	////////////////////////////////////
 }

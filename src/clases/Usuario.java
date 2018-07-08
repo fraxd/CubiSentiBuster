@@ -23,6 +23,8 @@ public class Usuario {
 		this.local = local;
 	}
 
+	/////////////////////////////////
+	/*Zona Getters*/
 	public int getId(){
 		return idUser;
 	}
@@ -38,6 +40,10 @@ public class Usuario {
 	public int getLocal(){
 		return local;
 	}
+	/*Fin Zona Getters*/
+	///////////////////////////////////
+	//////////////////////////////////
+	/*Zona Setters*/
 	public void setId(int id){
 		idUser=id;
 	}
@@ -53,6 +59,8 @@ public class Usuario {
 	public void setLocal(int lo){
 		local=lo;
 	}
+	/*Fin Zona Setters*/
+	///////////////////////////////////
 
 	public Usuario generarUsuario(int id,String p,String n,int le,int lo){
 		Usuario aux = new Usuario();
