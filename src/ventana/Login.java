@@ -27,6 +27,9 @@ public class Login extends JFrame {
 	private JTextField userField;
 	private JPasswordField passwordField;
 
+	/*
+	 * Ventana inicial para acceder al programa - Login
+	 */
 	public Login(Empresa cubiSentiBuster) {
 		setTitle("CubiSentiBuster Login");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

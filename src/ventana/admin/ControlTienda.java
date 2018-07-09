@@ -21,6 +21,9 @@ public class ControlTienda extends JFrame {
 
 	private JPanel contentPane;
 
+	/*
+	 * clase ventana enfocada en la creacion, eliminacion y modificacion de tiendas
+	 */
 	public ControlTienda(Empresa cubiSentiBuster) {
 		setTitle("Control Tienda");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

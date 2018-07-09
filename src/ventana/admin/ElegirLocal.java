@@ -22,6 +22,9 @@ public class ElegirLocal extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTextField textField;
 
+	/*
+	 * Clase Ventana que permite la seleccion de local para luego gestionarlo
+	 */
 	public ElegirLocal(Empresa cubiSentiBuster, int opcion) { // opcion 1 = ControlPersonal
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setType(Type.POPUP);
@@ -52,7 +55,7 @@ public class ElegirLocal extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						int aux=Integer.parseInt(textField.getText());
 						if(cubiSentiBuster.verifTienda(aux)) {
-							ControlPersonal controlPersonal = new ControlPersonal(cubiSentiBuster,aux);
+							ControlPersonal controlPersonal = new ControlPersonal(cubiSentiBuster,aux,0); //Corregir pronto .- franco
 							controlPersonal.setVisible(true);
 							dispose();
 						}

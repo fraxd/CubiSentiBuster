@@ -26,7 +26,9 @@ public class GestionClientes extends JFrame {
 	
 	
 	
-	
+	/*
+	 * Ventana para agregar, quitar, modificar clientas en empresa
+	 */
 	public GestionClientes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 559, 270);

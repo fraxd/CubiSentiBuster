@@ -24,6 +24,9 @@ public class NuevaTienda extends JDialog {
 	private JTextField textField;
 
 
+	/*
+	 * Ventana para la creacion de tiendas 
+	 */
 	public NuevaTienda(Empresa cubiSentiBuster) {
 		setBounds(100, 100, 453, 161);
 		getContentPane().setLayout(new BorderLayout());

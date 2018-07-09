@@ -16,8 +16,10 @@ public class CambioContraseña extends JFrame {
 	private JPanel contentPane;
 	private JPasswordField passwordField;
 	private JPasswordField passwordField_1;
+	private JPasswordField passwordField_2;
 
 	public CambioContraseña() {
+		
 		setTitle("Cambio Contrase\u00F1a");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 502, 322);
@@ -48,5 +50,9 @@ public class CambioContraseña extends JFrame {
 		passwordField_1 = new JPasswordField();
 		passwordField_1.setBounds(143, 56, 170, 19);
 		contentPane.add(passwordField_1);
+		
+		passwordField_2 = new JPasswordField();
+		passwordField_2.setBounds(143, 86, 170, 20);
+		contentPane.add(passwordField_2);
 	}
 }

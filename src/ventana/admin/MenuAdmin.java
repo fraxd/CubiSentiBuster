@@ -26,7 +26,9 @@ public class MenuAdmin extends JFrame {
 
 	private JPanel contentPane;
 
-	
+	/*
+	 * Menu que se ejecuta para los usuarios administradores que permite la creacion de tiendas, gestionar personal, entre otros.
+	 */
 	public MenuAdmin(Empresa cubiSentiBuster, int user) {
 		setTitle("Menu Admin");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,7 +40,7 @@ public class MenuAdmin extends JFrame {
 		contentPane.setLayout(null);
 		//String respLocal;
 		
-		JButton btnCerrarSesion = new JButton("Cerrar Sesion");
+		JButton btnCerrarSesion = new JButton("Cerrar Sesion"); //Cerrar sesion, funcion que permite que el usuario pueda cerrar su sesion y volver al login 
 		btnCerrarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();

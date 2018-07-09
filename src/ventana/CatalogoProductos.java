@@ -28,7 +28,9 @@ public class CatalogoProductos extends JFrame {
 
 
 	
-	
+	/*
+	 * Clase Ventana Catalogo Proudcto donde se podra agregar, quitar, y modificiar peliculas
+	 */
 	public CatalogoProductos(Empresa cubiSentiBuster) {
 		setOpacity(0.6f);
 		setTitle("Catalogo Productos");

@@ -20,7 +20,9 @@ public class VMenuPrincipal extends JFrame {
 
 	private JPanel contentPane;
 
-	
+	/*
+	 * menu principal de la applicacion
+	 */
 	public VMenuPrincipal(Empresa cubiSentiBuster, int userAux, int local) {
 		setTitle("Menu Principal");
 		

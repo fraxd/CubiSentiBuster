@@ -30,8 +30,11 @@ public class AgregarPersonal extends JDialog {
 	private JTextField fieldName;
 	private JPasswordField passField;
 	private JPasswordField passField1;
-
-	public AgregarPersonal(Empresa cubiSentiBuster, int idTienda) {
+	
+	/*
+	 * Clase Ventana para la agregar nuevos usuarios a determinadas tiendas
+	 */
+	public AgregarPersonal(Empresa cubiSentiBuster, int idTienda) { 
 		setTitle("Nuevo Personal");
 		getContentPane().setBackground(new Color(48, 63, 159));
 		setBounds(100, 100, 499, 348);

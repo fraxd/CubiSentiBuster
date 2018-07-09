@@ -22,6 +22,9 @@ public class TiendaEliminar extends JDialog {
 	private JTextField textField;
 
 
+	/*
+	 * Ventana para eliminar tiendas de empresa
+	 */
 	public TiendaEliminar(Empresa cubiSentiBuster) {
 		setBounds(100, 100, 493, 203);
 		getContentPane().setLayout(new BorderLayout());

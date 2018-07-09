@@ -20,7 +20,7 @@ import java.awt.event.ActionEvent;
 public class ControlPersonal extends JFrame {
 
 	public ControlPersonal(Empresa cubiSentiBuster,int idTienda, int level) {
-		//** Override para confirmar cierre *///
+		//** Override para confirmar cierre de ventana *///
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(java.awt.event.WindowEvent e) {
