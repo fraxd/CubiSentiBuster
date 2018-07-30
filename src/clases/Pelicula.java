@@ -5,7 +5,7 @@ public class Pelicula {
 	private String[] generos;
 	private int year;
 	private String duracion;
-	private double rate;
+	private Rate rate;
 	private int stock;
 	private int totalstock;
 
@@ -16,7 +16,7 @@ public class Pelicula {
 		generos= new String[3];
 		year=0;
 		duracion=null;
-		rate=0;
+		rate= new Rate();
 		stock=0;
 		totalstock=0;
 	}
@@ -48,7 +48,7 @@ public class Pelicula {
 		return duracion;
 	}
 	public double getRate(){
-		return rate;
+		return rate.getRate();
 	}
 	public int getStock() {
 		return stock;
@@ -74,8 +74,8 @@ public class Pelicula {
 	public void setDuracion(String duracion){
 		this.duracion=duracion;
 	}
-	public void setRate(double rate){
-		this.rate=rate;
+	public void setRate(long rate){///no cambia realmente el rate actual al dado, mas bien, suma el rate dado a los anteriores
+		this.rate.finalRate(rate);
 	}
 	public void setStock(int stock) {
 		this.stock = stock;

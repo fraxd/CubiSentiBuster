@@ -1,8 +1,8 @@
 package clases;
 
 public class Rate {
-	long votos; ///cantidad total de votos
-	long rate; ///rate entre todas las votaciones
+	private long votos; ///cantidad total de votos
+	private long rate; ///rate entre todas las votaciones
 	
 	///////////Constructor///////
 	public Rate() {
@@ -29,7 +29,7 @@ public class Rate {
 	/////////////////////////////
 	/////////////////////////////
 
-	void finalRate(long voto) {///voto es el rate que le dio el usuario, se promedia inmediatamente con los votos del resto
+	public void finalRate(long voto) {///voto es el rate que le dio el usuario, se promedia inmediatamente con los votos del resto
 		votos++;
 		rate=((rate*(votos-1))/votos)+(voto/votos);
 	}

@@ -6,7 +6,7 @@ public class Serie {
 	private int year;
 	private String duracion;
 	private int capitulos;
-	private double rate;
+	private Rate rate;
 	private int stock;
 	private int totalstock;
 
@@ -16,7 +16,9 @@ public class Serie {
 		generos= new String[3];
 		year=0;
 		duracion=null;
-		rate=0;
+		rate= new Rate();
+		stock=0;
+		totalstock=0;
 	}
 	public Serie(String name, String[] generos, int year, String duracion, int capitulos, double rate, int stock,
 			int totalstock) {
@@ -50,7 +52,7 @@ public class Serie {
 		return capitulos;
 	}
 	public double getRate(){
-		return rate;
+		return rate.getRate();
 	}
 	public int getStock() {
 		return stock;
@@ -78,8 +80,8 @@ public class Serie {
 	public void setCapitulos(int capitulos){
 		this.capitulos=capitulos;
 	}
-	public void setRate(double rate){
-		this.rate=rate;
+	public void setRate(long rate){ ///no cambia realmente el rate actual al dado, mas bien, suma el rate dado a los anteriores
+		this.rate.finalRate(rate);
 	}
 	public void setStock(int stock) {
 		this.stock = stock;

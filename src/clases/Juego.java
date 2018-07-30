@@ -5,7 +5,7 @@ public class Juego {
 	private String[] generos;
 	private int year;
 	private String plataforma;
-	private double rate;
+	private Rate rate;
 	private int stock;
 	private int totalstock;
 
@@ -15,9 +15,11 @@ public class Juego {
 		generos= new String[3];
 		year=0;
 		plataforma=null;
-		rate=0;
+		rate= new Rate();
+		stock=0;
+		totalstock=0;
 	}
-	public Juego(String name, String[] generos, int year, String plataforma, double rate, int stock, int totalstock) {
+	public Juego(String name, String[] generos, int year, String plataforma, Rate rate, int stock, int totalstock) {
 		this.name = name;
 		this.generos = generos;
 		this.year = year;
@@ -42,8 +44,8 @@ public class Juego {
 	public String getPlataforma(){
 		return plataforma;
 	}
-	public double getRate(){
-		return rate;
+	public long getRate(){
+		return rate.getRate();
 	}
 	public int getStock() {
 		return stock;
@@ -68,8 +70,8 @@ public class Juego {
 	public void setPlataforma(String plataforma){
 		this.plataforma=plataforma;
 	}
-	public void setRate(double rate){
-		this.rate=rate;
+	public void setRate(long rate){ ///no cambia realmente el rate actual al dado, mas bien, suma el rate dado a los anteriores
+		this.rate.finalRate(rate);
 	}
 	public void setStock(int stock) {
 		this.stock = stock;
@@ -80,7 +82,7 @@ public class Juego {
 	/*Fin Zona Setters*/
 	/////////////////////////////////////////
 
-	public Juego(String name, String[] generos, int year, String plataforma, double rate){
+	public Juego(String name, String[] generos, int year, String plataforma, long rate){
 		setName(name);
 		setGeneros(generos);
 		setYear(year);
