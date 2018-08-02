@@ -111,4 +111,23 @@ public class Tienda {
 		return retornable;
 	}
 	
+	/////////Zona quitar producto//////////////
+	public boolean quitarPelicula(String name) {
+		boolean retornable;
+		retornable=productos.quitarPelicula(name);
+		return retornable;
+	}
+	
+	public boolean quitarJuego(String name) {
+		boolean retornable;
+		retornable=productos.quitarJuego(name);
+		return retornable;
+	}
+	
+	public boolean quitarSerie(String name) {
+		boolean retornable;
+		retornable=productos.quitarSerie(name);
+		return retornable;
+	}
+	
 }
