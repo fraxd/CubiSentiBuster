@@ -278,11 +278,11 @@ public class Producto {
 	
 	//////////A partir de aqui estan todos los modificar ///////
 	public boolean modificarProducto(String name, Object modificado, int tipo, int tipomod) { /// tipo-> 0 == Pelicula, 1 == Juego, 2 == Serie
-		int i;																				///// tipomod->
-		int j;
-		if(tipo==0) {
-			if(tipomod==0) {///name
-				for(i=0;i<peliculas.sizeKappa();i++) {
+		int i;																				///// tipomod-> 0 == name	1 == generos	2 == year
+		int j;																				////			3 == rate	4 == stock	5 == totalstock
+		if(tipo==0) {																		/// tipo == 0, tipomod == 6 == duracion
+			if(tipomod==0) {///name															/// tipo == 1, tipomod == 6 == plataforma
+				for(i=0;i<peliculas.sizeKappa();i++) {										/// tipo == 2, tipomod == 6 == duracion, 7 == capitulos
 					if(((Pelicula)peliculas.getKappa(i)).getName()==name) {
 						for(j=0;j<peliculas.sizeKappa();i++) {
 							if(((Pelicula)peliculas.getKappa(j)).getName()==name) {

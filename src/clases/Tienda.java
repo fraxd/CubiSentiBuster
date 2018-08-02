@@ -104,4 +104,11 @@ public class Tienda {
 		return false;
 	}
 	
+	//////////Zona modificar producto////////////
+	public boolean modificarProducto(String name, Object modificador, int tipo, int tipomod) {
+		boolean retornable;
+		retornable=productos.modificarProducto(name,modificador,tipo,tipomod);
+		return retornable;
+	}
+	
 }
