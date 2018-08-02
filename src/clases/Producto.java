@@ -477,9 +477,7 @@ public class Producto {
 				}
 			}
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 	
 	
