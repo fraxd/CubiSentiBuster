@@ -95,6 +95,7 @@ public class Empresa {
 		}
 		return -1; ////En caso de retornar -1, no encontro al usuario
 	}
+	
 
 	public boolean agregarTienda(Tienda tienda) { /// Agrega una tienda, retorna true si lo logra, false si no  ////encapsulamiento pendiente
 		int i;
@@ -146,6 +147,15 @@ public class Empresa {
 		}
 		return false;
 	}
+	
+	public 	Persona buscaRetornaCliente(String rut) {
+		int i;
+		for(i=0;i<clientes.sizeKappa();i++) {
+			if(((Persona) clientes.getKappa(i)).getRut().equals(rut))return (Persona) clientes.getKappa(i);
+		}
+		return null;
+	}
+	
 	
 	//// Otros Metodos
 	public boolean verifPassword(String pass1, String pass2) { ///Compara los password, si coinciden retorna ture, si no, false.
@@ -298,7 +308,12 @@ public class Empresa {
 				
 	}
 
-
+/****** Metodos Varios ****/
+	public void cargarArriendo(String rut, Arriendos arriendo) {
+		Persona cliente = new Persona();
+		cliente = buscaRetornaCliente(rut);
+		cliente.cargarArriendo(arriendo);
+	}
 	
 	
 }//*** FIN ARCHIVO FIN ARCHIVO FIN ARCHIVO FIN ARCHIVO FIN ARCHIVO FIN ARCHVIO	

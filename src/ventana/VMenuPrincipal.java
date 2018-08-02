@@ -84,7 +84,8 @@ public class VMenuPrincipal extends JFrame {
 		JButton btnPass = new JButton("Cambio Contrase\u00F1a");
 		btnPass.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				CambioContraseña cambioContraseña = new CambioContraseña();
+				cambioContraseña.setVisible(true);
 				
 			}
 		});

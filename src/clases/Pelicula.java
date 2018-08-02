@@ -1,6 +1,7 @@
 package clases;
 
 public class Pelicula {
+	private int id;
 	private String name;
 	private String[] generos;
 	private int year;
@@ -21,7 +22,7 @@ public class Pelicula {
 		totalstock=0;
 	}
 
-	public Pelicula(String name, String[] generos, int year, String duracion, double rate, int stock, int totalstock) {
+	public Pelicula(int id, String name, String[] generos, int year, String duracion, Rate rate, int stock, int totalstock) {
 		this.name = name;
 		this.generos = generos;
 		this.year = year;
@@ -38,6 +39,12 @@ public class Pelicula {
 	public String getName(){
 		return name;
 	}
+	public int getId() {
+		return id;
+	}
+
+
+
 	public String[] getGeneros(){
 		return generos;
 	}
@@ -62,6 +69,9 @@ public class Pelicula {
 	/////////////////////////////////////
 	/*Zona Setters*/
 	
+	public void setId(int id) {
+		this.id = id;
+	}
 	public void setName(String name){
 		this.name=name;	
 	}

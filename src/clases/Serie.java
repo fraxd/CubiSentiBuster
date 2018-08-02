@@ -1,6 +1,7 @@
 package clases;
 
 public class Serie {
+	private int id;
 	private String name;
 	private String[] generos;
 	private int year;
@@ -20,7 +21,7 @@ public class Serie {
 		stock=0;
 		totalstock=0;
 	}
-	public Serie(String name, String[] generos, int year, String duracion, int capitulos, double rate, int stock,
+	public Serie(int id, String name, String[] generos, int year, String duracion, int capitulos, Rate rate, int stock,
 			int totalstock) {
 		this.name = name;
 		this.generos = generos;
@@ -60,6 +61,9 @@ public class Serie {
 	public int getTotalstock() {
 		return totalstock;
 	}
+	public int getId() {
+		return id;
+	}
 	/*Fin zona Getters*/
 	//////////////////////
 	/////////////////////
@@ -88,6 +92,9 @@ public class Serie {
 	}
 	public void setTotalstock(int totalstock) {
 		this.totalstock = totalstock;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	/*Fin zona Setters*/

@@ -6,18 +6,17 @@ public class Persona {
 	private String nombre;
 	private int telefono;
 	private String correo;
-	private String[] arriendos;
-	
+	private ListaKappa Arriendos;
+		
 	public Persona() {
 		this.rut = null;
 		this.nombre = null;
 		this.telefono = 0;
-		this.arriendos= new String[5];
+		this.Arriendos= new ListaKappa();
 	}
  	
-	public Persona(String rut, String[] arriendos) {
+	public Persona(String rut) {
 		this.rut = rut;
-		this.setArriendos(arriendos);
 	}
 	
 	public Persona(String rut, String nombre, int telefono, String correo) {
@@ -32,12 +31,6 @@ public class Persona {
 	}
 	public void setRut(String rut) {
 		this.rut = rut;
-	}
-	public String[] getArriendos() {
-		return arriendos;
-	}
-	public void setArriendos(String[] arriendos) { // 
-		this.arriendos = arriendos;
 	}
 
 	public String getNombre() {
@@ -64,4 +57,14 @@ public class Persona {
 		this.correo = correo;
 	}
 	
+
+	public void setArriendos(ListaKappa arriendos) {
+		Arriendos = arriendos;
+	}
+
+	public void cargarArriendo(Arriendos arriendo) {
+		Arriendos.addKappa(arriendo);
+		
+	}
+
 }

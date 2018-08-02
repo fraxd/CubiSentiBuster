@@ -3,28 +3,28 @@ package clases;
 import java.util.Date;
 
 public class Arriendos {
-	private Producto producto;
-	
-	Date fechaSalida;
-	Date fechaEntrega;
-	boolean estadoEntrega;
-	int atraso; // Son Numeros de dias
+	private int id;
+	private int type;
+	private Date fechaSalida;
+	private Date fechaEntrega;
+	private boolean estadoEntrega; // True = Entregado - False = No entregado
 
 	public Arriendos() {
-		producto=null;
-		//fechaSalida=
-		//fechaEntrega=
+		id=0;
+		type=0;
+		fechaSalida=null;
+		fechaEntrega=null;
 		estadoEntrega=false;
-		atraso=0;
+	}
+	
+	public Arriendos(int id, int type, Date fechaSalida, Date fechaEntrega, boolean estadoEntrega, int atraso) {
+		this.id=id;
+		this.type=type;
+		this.fechaSalida=fechaSalida;
+		this.fechaEntrega=fechaEntrega;
+		this.estadoEntrega=estadoEntrega;
 	}
 
-	public Producto getProducto() {
-		return producto;
-	}
-
-	public void setProducto(Producto producto) {
-		this.producto = producto;
-	}
 	
 	public Date getFechaSalida() {
 		return fechaSalida;
@@ -50,12 +50,24 @@ public class Arriendos {
 		this.estadoEntrega = estadoEntrega;
 	}
 
-	public int getAtraso() {
-		return atraso;
+
+
+	public int getId() {
+		return id;
 	}
 
-	public void setAtraso(int atraso) {
-		this.atraso = atraso;
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public int getType() {
+		return type;
+	}
+
+
+	public void setType(int type) {
+		this.type = type;
 	}
 
 

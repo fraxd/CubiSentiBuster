@@ -1,6 +1,7 @@
 package clases;
 
 public class Juego {
+	private int id;
 	private String name;
 	private String[] generos;
 	private int year;
@@ -19,7 +20,7 @@ public class Juego {
 		stock=0;
 		totalstock=0;
 	}
-	public Juego(String name, String[] generos, int year, String plataforma, Rate rate, int stock, int totalstock) {
+	public Juego(int id, String name, String[] generos, int year, String plataforma, Rate rate, int stock, int totalstock) {
 		this.name = name;
 		this.generos = generos;
 		this.year = year;
@@ -35,6 +36,10 @@ public class Juego {
 	public String getName(){
 		return name;
 	}
+	public int getId() {
+		return id;
+	}
+
 	public String[] getGeneros(){
 		return generos;
 	}
@@ -78,6 +83,9 @@ public class Juego {
 	}
 	public void setTotalstock(int totalstock) {
 		this.totalstock = totalstock;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	/*Fin Zona Setters*/
 	/////////////////////////////////////////

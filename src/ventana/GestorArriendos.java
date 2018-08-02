@@ -1,14 +1,17 @@
 package ventana;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.swing.JButton;
 import javax.swing.JSeparator;
 import javax.swing.JList;
@@ -18,7 +21,11 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 
+import com.csvreader.CsvReader;
+
+import clases.Arriendos;
 import clases.Empresa;
+import clases.Persona;
 
 import javax.swing.ListSelectionModel;
 import javax.swing.GroupLayout;
@@ -38,9 +45,10 @@ public class GestorArriendos extends JFrame {
 
 	
 	/*
-	 * Clase Ventana que contiene las opciones de arriendo, devolucion y perdida de peliculas. Su funcionamie	nto se basa en el rut del cliente excencialmente
+	 * Clase Ventana que contiene las opciones de arriendo, devolucion y perdida de peliculas. Su funcionamie	nto se basa en el rut del arriendos excencialmente
 	 */
 	public GestorArriendos(Empresa cubiSentiBuster) {
+		//cargaDatosArriendos(cubiSentiBuster);
 		setBackground(Color.WHITE);
 		setTitle("Gestor de Arriendos");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -53,8 +61,8 @@ public class GestorArriendos extends JFrame {
 		textField = new JTextField();
 		textField.setColumns(10);
 		
-		JLabel lblIngresarRutCliente = new JLabel("Ingresar Rut Cliente");
-		lblIngresarRutCliente.setFont(new Font("Roboto", Font.PLAIN, 14));
+		JLabel lblIngresarRutarriendos = new JLabel("Ingresar Rut arriendos");
+		lblIngresarRutarriendos.setFont(new Font("Roboto", Font.PLAIN, 14));
 		
 		JButton btnCargar = new JButton("Cargar ");
 		btnCargar.setFont(new Font("Roboto", Font.PLAIN, 14));
@@ -77,7 +85,7 @@ public class GestorArriendos extends JFrame {
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(5)
-					.addComponent(lblIngresarRutCliente, GroupLayout.PREFERRED_SIZE, 133, GroupLayout.PREFERRED_SIZE)
+					.addComponent(lblIngresarRutarriendos, GroupLayout.PREFERRED_SIZE, 133, GroupLayout.PREFERRED_SIZE)
 					.addGap(3)
 					.addComponent(textField, GroupLayout.PREFERRED_SIZE, 133, GroupLayout.PREFERRED_SIZE)
 					.addGap(31)
@@ -104,7 +112,7 @@ public class GestorArriendos extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(6)
-							.addComponent(lblIngresarRutCliente, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+							.addComponent(lblIngresarRutarriendos, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(7)
 							.addComponent(textField, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE))
@@ -144,4 +152,49 @@ public class GestorArriendos extends JFrame {
 		scrollPane.setViewportView(table);
 		contentPane.setLayout(gl_contentPane);
 	}
-}
+	public void cargaDatosArriendos(Empresa cubiSentiBuster) throws ParseException { // Carga los Arriendos 
+			try {
+				Arriendos arriendo = new Arriendos();
+				int aux;
+				Date date = new Date();
+		        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+		     
+			    CsvReader arriendos_import = new CsvReader("csv/ArchivoArriendos.csv");
+		        arriendos_import.readHeaders();
+		        
+		        while (arriendos_import.readRecord()) {
+		        	
+		        	String rut = arriendos_import.get("rut");
+		        	String id = arriendos_import.get("id");
+		        	String type = arriendos_import.get("type");
+		        	String fSalida = arriendos_import.get("fSalida");
+		        	String fEntrada = arriendos_import.get("fEntrada");
+		        	String estado = arriendos_import.get("estado");
+		            
+		            aux=Integer.parseInt(id);
+		            arriendo.setId(aux);
+		            aux=Integer.parseInt(type);
+		            arriendo.setType(aux);
+		            date =formatter.parse(fSalida);
+		            arriendo.setFechaSalida(date);
+		            date =formatter.parse(fEntrada);
+		            arriendo.setFechaEntrega(date);
+		            if(estado.equals("true"))arriendo.setEstadoEntrega(true);
+		            else arriendo.setEstadoEntrega(false);
+		            
+		            cubiSentiBuster.cargarArriendo(rut,arriendo);
+		            
+		        }
+	            arriendos_import.close();
+
+
+			}catch(FileNotFoundException e) {     
+				e.printStackTrace();
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+			
+			
+		}
+		
+	}
