@@ -276,4 +276,218 @@ public class Producto {
 		return false;
 	}
 	
+	//////////A partir de aqui estan todos los modificar ///////
+	public boolean modificarProducto(String name, Object modificado, int tipo, int tipomod) { /// tipo-> 0 == Pelicula, 1 == Juego, 2 == Serie
+		int i;																				///// tipomod->
+		int j;
+		if(tipo==0) {
+			if(tipomod==0) {///name
+				for(i=0;i<peliculas.sizeKappa();i++) {
+					if(((Pelicula)peliculas.getKappa(i)).getName()==name) {
+						for(j=0;j<peliculas.sizeKappa();i++) {
+							if(((Pelicula)peliculas.getKappa(j)).getName()==name) {
+								return false;
+							}
+							else {
+								((Pelicula)peliculas.getKappa(i)).setName((String)modificado);
+								return true;
+							}
+						}
+					}
+				}
+			}
+			else if(tipomod==1) {///generos
+				for(i=0;i<peliculas.sizeKappa();i++) {
+					if(((Pelicula)peliculas.getKappa(i)).getName()==name) {
+						((Pelicula)peliculas.getKappa(i)).setGeneros((String[])modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==2) {///year
+				for(i=0;i<peliculas.sizeKappa();i++) {
+					if(((Pelicula)peliculas.getKappa(i)).getName()==name) {
+						((Pelicula)peliculas.getKappa(i)).setYear((int)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==3) {///rate
+				for(i=0;i<peliculas.sizeKappa();i++) {
+					if(((Pelicula)peliculas.getKappa(i)).getName()==name) {
+						((Pelicula)peliculas.getKappa(i)).setRate((long)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==4) {///stock
+				for(i=0;i<peliculas.sizeKappa();i++) {
+					if(((Pelicula)peliculas.getKappa(i)).getName()==name) {
+						((Pelicula)peliculas.getKappa(i)).setStock((int)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==5) {///totalstock
+				for(i=0;i<peliculas.sizeKappa();i++) {
+					if(((Pelicula)peliculas.getKappa(i)).getName()==name) {
+						((Pelicula)peliculas.getKappa(i)).setTotalstock((int)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==6) {///duracion
+				for(i=0;i<peliculas.sizeKappa();i++) {
+					if(((Pelicula)peliculas.getKappa(i)).getName()==name) {
+						((Pelicula)peliculas.getKappa(i)).setDuracion((String)modificado);
+						return true;
+					}
+				}
+			}
+		}
+		if(tipo==1) {
+			if(tipomod==0) {///name
+				for(i=0;i<juegos.sizeKappa();i++) {
+					if(((Juego)juegos.getKappa(i)).getName()==name) {
+						for(j=0;j<juegos.sizeKappa();i++) {
+							if(((Juego)juegos.getKappa(j)).getName()==name) {
+								return false;
+							}
+							else {
+								((Juego)juegos.getKappa(i)).setName((String)modificado);
+								return true;
+							}
+						}
+					}
+				}
+			}
+			else if(tipomod==1) {///generos
+				for(i=0;i<juegos.sizeKappa();i++) {
+					if(((Juego)juegos.getKappa(i)).getName()==name) {
+						((Juego)juegos.getKappa(i)).setGeneros((String[])modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==2) {///year
+				for(i=0;i<juegos.sizeKappa();i++) {
+					if(((Juego)juegos.getKappa(i)).getName()==name) {
+						((Juego)juegos.getKappa(i)).setYear((int)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==3) {///rate
+				for(i=0;i<juegos.sizeKappa();i++) {
+					if(((Juego)juegos.getKappa(i)).getName()==name) {
+						((Juego)juegos.getKappa(i)).setRate((long)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==4) {///stock
+				for(i=0;i<juegos.sizeKappa();i++) {
+					if(((Juego)juegos.getKappa(i)).getName()==name) {
+						((Juego)juegos.getKappa(i)).setStock((int)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==5) {///totalstock
+				for(i=0;i<juegos.sizeKappa();i++) {
+					if(((Juego)juegos.getKappa(i)).getName()==name) {
+						((Juego)juegos.getKappa(i)).setTotalstock((int)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==6) {///plataforma
+				for(i=0;i<juegos.sizeKappa();i++) {
+					if(((Juego)juegos.getKappa(i)).getName()==name) {
+						((Juego)juegos.getKappa(i)).setPlataforma((String)modificado);
+						return true;
+					}
+				}
+			}
+		}
+		if(tipo==2) {
+			if(tipomod==0) {
+				for(i=0;i<series.sizeKappa();i++) {
+					if(((Serie)series.getKappa(i)).getName()==name) {
+						for(j=0;j<series.sizeKappa();i++) {
+							if(((Serie)series.getKappa(j)).getName()==name) {
+								return false;
+							}
+							else {
+								((Serie)series.getKappa(i)).setName((String)modificado);
+								return true;
+							}
+						}
+					}
+				}
+			}
+			else if(tipomod==1) {///generos
+				for(i=0;i<series.sizeKappa();i++) {
+					if(((Serie)series.getKappa(i)).getName()==name) {
+						((Serie)series.getKappa(i)).setGeneros((String[])modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==2) {///year
+				for(i=0;i<series.sizeKappa();i++) {
+					if(((Serie)series.getKappa(i)).getName()==name) {
+						((Serie)series.getKappa(i)).setYear((int)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==3) {///rate
+				for(i=0;i<series.sizeKappa();i++) {
+					if(((Serie)series.getKappa(i)).getName()==name) {
+						((Serie)series.getKappa(i)).setRate((long)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==4) {///stock
+				for(i=0;i<series.sizeKappa();i++) {
+					if(((Serie)series.getKappa(i)).getName()==name) {
+						((Serie)series.getKappa(i)).setStock((int)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==5) {///totalstock
+				for(i=0;i<series.sizeKappa();i++) {
+					if(((Serie)series.getKappa(i)).getName()==name) {
+						((Serie)series.getKappa(i)).setTotalstock((int)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==6) {///duracion
+				for(i=0;i<series.sizeKappa();i++) {
+					if(((Serie)series.getKappa(i)).getName()==name) {
+						((Serie)series.getKappa(i)).setDuracion((String)modificado);
+						return true;
+					}
+				}
+			}
+			else if(tipomod==7) {///capitulos
+				for(i=0;i<series.sizeKappa();i++) {
+					if(((Serie)series.getKappa(i)).getName()==name) {
+						((Serie)series.getKappa(i)).setCapitulos((int)modificado);
+						return true;
+					}
+				}
+			}
+		}
+		else {
+			return false;
+		}
+	}
+	
+	
+	
 }
