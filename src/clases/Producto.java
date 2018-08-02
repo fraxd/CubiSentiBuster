@@ -288,11 +288,9 @@ public class Producto {
 							if(((Pelicula)peliculas.getKappa(j)).getName()==name) {
 								return false;
 							}
-							else {
-								((Pelicula)peliculas.getKappa(i)).setName((String)modificado);
-								return true;
-							}
 						}
+						((Pelicula)peliculas.getKappa(i)).setName((String)modificado);
+						return true;
 					}
 				}
 			}
@@ -353,11 +351,9 @@ public class Producto {
 							if(((Juego)juegos.getKappa(j)).getName()==name) {
 								return false;
 							}
-							else {
-								((Juego)juegos.getKappa(i)).setName((String)modificado);
-								return true;
-							}
 						}
+						((Juego)juegos.getKappa(i)).setName((String)modificado);
+						return true;
 					}
 				}
 			}
@@ -418,11 +414,9 @@ public class Producto {
 							if(((Serie)series.getKappa(j)).getName()==name) {
 								return false;
 							}
-							else {
-								((Serie)series.getKappa(i)).setName((String)modificado);
-								return true;
-							}
 						}
+						((Serie)series.getKappa(i)).setName((String)modificado);
+						return true;
 					}
 				}
 			}
